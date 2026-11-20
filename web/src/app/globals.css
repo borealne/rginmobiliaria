@@ -1,0 +1,263 @@
+@import "tailwindcss";
+
+/*
+ * Sistema visual "Architectural Prestige" (prototipo Stitch) + tokens del PRD (sección 3).
+ * Los nombres de los tokens son los mismos del prototipo, para que el marcado se mantenga igual.
+ */
+@theme {
+  /* --- Colores del prototipo --- */
+  --color-surface: #fbf9f6;
+  --color-surface-dim: #dbdad7;
+  --color-surface-bright: #fbf9f6;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f5f3f0;
+  --color-surface-container: #f0edea;
+  --color-surface-container-high: #eae8e5;
+  --color-surface-container-highest: #e4e2df;
+  --color-surface-variant: #e4e2df;
+  --color-surface-tint: #5f5e5e;
+  --color-on-surface: #1b1c1a;
+  --color-on-surface-variant: #444748;
+  --color-inverse-surface: #30312f;
+  --color-inverse-on-surface: #f2f0ed;
+  --color-outline: #747878;
+  --color-outline-variant: #c4c7c7;
+  --color-background: #fbf9f6;
+  --color-on-background: #1b1c1a;
+
+  /* Negro lobo #111111 (documento maestro) como primario */
+  --color-primary: #111111;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #1c1b1b;
+  --color-on-primary-container: #858383;
+  --color-primary-fixed: #e5e2e1;
+  --color-primary-fixed-dim: #c8c6c5;
+  --color-on-primary-fixed: #1c1b1b;
+  --color-on-primary-fixed-variant: #474646;
+  --color-inverse-primary: #c8c6c5;
+
+  --color-secondary: #635d58;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #eae1da;
+  --color-on-secondary-container: #69635e;
+  --color-secondary-fixed: #eae1da;
+  --color-secondary-fixed-dim: #cdc5bf;
+  --color-on-secondary-fixed: #1f1b17;
+  --color-on-secondary-fixed-variant: #4b4641;
+
+  --color-tertiary: #000000;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #3f0300;
+  --color-on-tertiary-container: #ed482e;
+  --color-tertiary-fixed: #ffdad3;
+  --color-tertiary-fixed-dim: #ffb4a6;
+  --color-on-tertiary-fixed: #3f0300;
+  --color-on-tertiary-fixed-variant: #8f1000;
+
+  --color-error: #b3261e;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  /* --- Marca RG (documento maestro, sección 6) --- */
+  --color-rg-black: #111111;
+  --color-rg-bone: #f5f3f1;
+  --color-rg-gray: #6b6560;
+  --color-rg-line: #eceae7;
+  --color-rg-red: #d93a21; /* solo detalles pequeños: línea de 3 px y punto */
+  --color-rg-red-deep: #a82a1b;
+  --color-rg-gold: #c9a25c; /* "Exclusiva RG" sobre negro [ABIERTO] */
+  --color-rg-accent: #d93a21;
+
+  /* --- Estados (PRD 3.1) --- */
+  --color-st-available: #2f6b57;
+  --color-st-available-bg: #e4f0eb;
+  --color-st-reserved: #8f5f10;
+  --color-st-reserved-bg: #f7ebd3;
+  --color-st-building: #3a5f8a;
+  --color-st-building-bg: #e3ebf4;
+  --color-st-closed: #6b6560;
+  --color-st-closed-bg: #eceae7;
+
+  /* --- Tipografía --- */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-display-xl: var(--font-montserrat), sans-serif;
+  --font-display-xl-mobile: var(--font-montserrat), sans-serif;
+  --font-headline-lg: var(--font-montserrat), sans-serif;
+  --font-headline-lg-mobile: var(--font-montserrat), sans-serif;
+  --font-headline-md: var(--font-montserrat), sans-serif;
+  --font-headline-sm: var(--font-montserrat), sans-serif;
+  --font-title-md: var(--font-montserrat), sans-serif;
+  --font-price-display: var(--font-montserrat), sans-serif;
+  --font-body-lg: var(--font-inter), sans-serif;
+  --font-body-md: var(--font-inter), sans-serif;
+  --font-body-sm: var(--font-inter), sans-serif;
+  --font-label-md: var(--font-inter), sans-serif;
+  --font-label-sm: var(--font-inter), sans-serif;
+
+  --text-display-xl: 48px;
+  --text-display-xl--line-height: 56px;
+  --text-display-xl--letter-spacing: -0.02em;
+  --text-display-xl--font-weight: 700;
+  --text-display-xl-mobile: 32px;
+  --text-display-xl-mobile--line-height: 40px;
+  --text-display-xl-mobile--letter-spacing: -0.01em;
+  --text-display-xl-mobile--font-weight: 700;
+  --text-headline-lg: 32px;
+  --text-headline-lg--line-height: 40px;
+  --text-headline-lg--letter-spacing: -0.01em;
+  --text-headline-lg--font-weight: 700;
+  --text-headline-lg-mobile: 24px;
+  --text-headline-lg-mobile--line-height: 32px;
+  --text-headline-lg-mobile--letter-spacing: -0.01em;
+  --text-headline-lg-mobile--font-weight: 700;
+  --text-headline-md: 24px;
+  --text-headline-md--line-height: 32px;
+  --text-headline-md--letter-spacing: -0.005em;
+  --text-headline-md--font-weight: 600;
+  --text-headline-sm: 20px;
+  --text-headline-sm--line-height: 28px;
+  --text-headline-sm--font-weight: 600;
+  --text-title-md: 16px;
+  --text-title-md--line-height: 24px;
+  --text-title-md--letter-spacing: 0.01em;
+  --text-title-md--font-weight: 600;
+  --text-price-display: 22px;
+  --text-price-display--line-height: 28px;
+  --text-price-display--letter-spacing: -0.01em;
+  --text-price-display--font-weight: 700;
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 28px;
+  --text-body-md: 15px;
+  --text-body-md--line-height: 24px;
+  --text-body-sm: 13px;
+  --text-body-sm--line-height: 20px;
+  --text-label-md: 14px;
+  --text-label-md--line-height: 20px;
+  --text-label-md--font-weight: 500;
+  --text-label-sm: 12px;
+  --text-label-sm--line-height: 16px;
+  --text-label-sm--letter-spacing: 0.02em;
+  --text-label-sm--font-weight: 500;
+
+  /* --- Espacios del prototipo --- */
+  --spacing-gutter: 1.5rem;
+  --spacing-gutter-mobile: 1rem;
+  --spacing-margin: 3rem;
+  --spacing-margin-mobile: 1.25rem;
+  --spacing-margin-tablet: 2rem;
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2.5rem;
+
+  /* --- Animaciones --- */
+  --animate-fade-in: fadeInUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-dot: dotPulse 1.2s ease-in-out infinite;
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes dotPulse {
+    0%, 80%, 100% { opacity: 0.25; transform: translateY(0); }
+    40% { opacity: 1; transform: translateY(-2px); }
+  }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-surface);
+    color: var(--color-on-surface);
+    font-family: var(--font-sans);
+    overscroll-behavior: none;
+  }
+  /* Foco visible (WCAG 2.1 AA) */
+  :focus-visible {
+    outline: 2px solid var(--color-rg-black);
+    outline-offset: 2px;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
+}
+
+/* Íconos Material Symbols (los mismos del prototipo) */
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  user-select: none;
+}
+.icon-fill {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+/* Control deslizante doble de precio: solo las manijas reciben el puntero */
+.range-thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  pointer-events: auto;
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  background: var(--color-primary);
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.range-thumb::-moz-range-thumb {
+  pointer-events: auto;
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  background: var(--color-primary);
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+.range-thumb:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Botones flotantes por encima de la barra fija inferior (M2) */
+@media (max-width: 639px) {
+  body[data-bottom-bar] .fab-lift {
+    bottom: 5.5rem;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
