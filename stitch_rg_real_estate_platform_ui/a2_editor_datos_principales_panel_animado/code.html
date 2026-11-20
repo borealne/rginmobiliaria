@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Montserrat:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+@layer base{
+  html,body{margin:0;padding:0;}
+  body{overscroll-behavior:none;}
+  main>:first-child{margin-top:0!important;}
+  main>:last-child{margin-bottom:0!important;}
+}
+::-webkit-scrollbar{display:none;}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes radarRipple {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-100 { animation-delay: 80ms; }
+.delay-150 { animation-delay: 140ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-250 { animation-delay: 260ms; }
+.delay-300 { animation-delay: 320ms; }
+
+.radar-ring {
+  animation: radarRipple 3s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+}
+
+/* Custom interactive inputs with high affordance */
+.form-input-focus {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.form-input-focus:focus {
+  border-color: #111111 !important;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+.btn-press {
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-press:active {
+  transform: scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transform: none !important;
+  }
+}
+</style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "surface-container-low": "#f5f3f0",
+        "surface-container": "#f0edea",
+        "surface-variant": "#e4e2df",
+        "inverse-surface": "#30312f",
+        "secondary-container": "#eae1da",
+        "secondary": "#635d58",
+        "primary": "#000000",
+        "surface": "#fbf9f6",
+        "on-surface-variant": "#444748",
+        "outline-variant": "#c4c7c7",
+        "secondary-fixed": "#eae1da",
+        "error-container": "#ffdad6",
+        "outline": "#747878",
+        "surface-bright": "#fbf9f6",
+        "surface-container-highest": "#e4e2df",
+        "on-primary-fixed-variant": "#474646",
+        "on-secondary": "#ffffff",
+        "primary-container": "#1c1b1b",
+        "surface-container-lowest": "#ffffff",
+        "on-secondary-container": "#69635e",
+        "on-background": "#1b1c1a",
+        "inverse-primary": "#c8c6c5",
+        "on-tertiary-fixed-variant": "#8f1000",
+        "tertiary-fixed-dim": "#ffb4a6",
+        "surface-tint": "#5f5e5e",
+        "on-tertiary-container": "#ed482e",
+        "primary-fixed": "#e5e2e1",
+        "inverse-on-surface": "#f2f0ed",
+        "on-secondary-fixed": "#1f1b17",
+        "error": "#ba1a1a",
+        "surface-dim": "#dbdad7",
+        "tertiary-container": "#3f0300",
+        "on-error": "#ffffff",
+        "on-primary-container": "#858383",
+        "on-secondary-fixed-variant": "#4b4641",
+        "background": "#fbf9f6",
+        "on-tertiary-fixed": "#3f0300",
+        "on-primary-fixed": "#1c1b1b",
+        "on-error-container": "#93000a",
+        "on-tertiary": "#ffffff",
+        "on-primary": "#ffffff",
+        "tertiary-fixed": "#ffdad3",
+        "surface-container-high": "#eae8e5",
+        "on-surface": "#1b1c1a",
+        "primary-fixed-dim": "#c8c6c5",
+        "secondary-fixed-dim": "#cdc5bf",
+        "tertiary": "#000000",
+        "rg-accent": "#D93A21",
+        "rg-gold": "#C9A25C"
+      },
+      borderRadius: {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      spacing: {
+        "margin-tablet": "2rem",
+        "space-md": "1rem",
+        "margin": "3rem",
+        "gutter-mobile": "1rem",
+        "space-sm": "0.5rem",
+        "margin-mobile": "1.25rem",
+        "space-xs": "0.25rem",
+        "gutter": "1.5rem",
+        "space-xl": "2.5rem",
+        "space-lg": "1.5rem"
+      },
+      fontFamily: {
+        "title-md": ["Montserrat", "sans-serif"],
+        "headline-lg-mobile": ["Montserrat", "sans-serif"],
+        "body-lg": ["Inter", "sans-serif"],
+        "headline-lg": ["Montserrat", "sans-serif"],
+        "headline-sm": ["Montserrat", "sans-serif"],
+        "display-xl": ["Montserrat", "sans-serif"],
+        "display-xl-mobile": ["Montserrat", "sans-serif"],
+        "headline-md": ["Montserrat", "sans-serif"],
+        "label-sm": ["Inter", "sans-serif"],
+        "body-sm": ["Inter", "sans-serif"],
+        "price-display": ["Montserrat", "sans-serif"],
+        "label-md": ["Inter", "sans-serif"],
+        "body-md": ["Inter", "sans-serif"]
+      }
+    }
+  }
+};
+</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-neutral-900 selection:text-white">
+<!-- Persistent Left Sidebar (260px) -->
+<aside class="fixed left-0 top-0 h-full w-[260px] bg-primary text-on-primary z-50 flex flex-col justify-between select-none shadow-xl">
+<div class="flex flex-col flex-1 min-h-0">
+<div class="h-20 px-5 flex items-center gap-3.5 bg-primary/95 border-b border-inverse-surface/60">
+<div class="w-9 h-9 rounded-full bg-surface text-primary flex items-center justify-center font-title-md text-title-md shrink-0 shadow-sm transition-transform hover:scale-105 duration-200">
+<span class="tracking-tighter">RG</span>
+</div>
+<div class="flex flex-col overflow-hidden">
+<span class="font-title-md text-title-md leading-tight text-surface tracking-tight truncate">RG Inmobiliaria</span>
+<span class="font-label-sm text-[11px] text-surface-variant/75 tracking-wider truncate uppercase font-semibold">Panel de Control</span>
+</div>
+</div>
+<nav class="flex-1 px-3 py-4 space-y-1.5 overflow-y-auto">
+<a class="group flex items-center gap-3 px-3 py-2.5 rounded-lg bg-surface-container-lowest text-primary font-title-md text-label-md transition-all duration-200 shadow-sm" data-path="propiedades" href="#">
+<span class="material-symbols-outlined text-[20px] text-primary transition-transform group-hover:scale-110">apartment</span>
+<span class="truncate">Propiedades</span>
+<span class="ml-auto w-1.5 h-1.5 rounded-full bg-rg-accent"></span>
+</a>
+<a class="group flex items-center gap-3 px-3 py-2.5 rounded-lg text-surface-variant font-label-md text-label-md transition-all duration-150 hover:bg-surface-container-high hover:text-on-surface" data-path="contenido-web" href="#">
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:scale-105">web</span>
+<span class="truncate">Contenido web</span>
+</a>
+<a class="group flex items-center gap-3 px-3 py-2.5 rounded-lg text-surface-variant font-label-md text-label-md transition-all duration-150 hover:bg-surface-container-high hover:text-on-surface" data-path="blog" href="#">
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:scale-105">edit_note</span>
+<span class="truncate">Blog</span>
+</a>
+<a class="group flex items-center gap-3 px-3 py-2.5 rounded-lg text-surface-variant font-label-md text-label-md transition-all duration-150 hover:bg-surface-container-high hover:text-on-surface" data-path="contactos-y-pipeline" href="#">
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:scale-105">view_kanban</span>
+<span class="truncate">Contactos y pipeline</span>
+</a>
+<a class="group flex items-center gap-3 px-3 py-2.5 rounded-lg text-surface-variant font-label-md text-label-md transition-all duration-150 hover:bg-surface-container-high hover:text-on-surface" data-path="configuracion" href="#">
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:scale-105">settings</span>
+<span class="truncate">Configuración</span>
+</a>
+</nav>
+</div>
+<div class="p-4 bg-primary-container border-t border-inverse-surface/60">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-9 h-9 rounded-full bg-surface-container-low text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">person</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-label-md text-label-md text-surface font-semibold truncate">Raúl</span>
+<span class="font-label-sm text-label-sm text-surface-variant/70 truncate">Super admin</span>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-inverse-surface hover:bg-surface hover:text-primary text-surface font-label-sm text-label-sm transition-all duration-200 btn-press" type="button">
+<span class="material-symbols-outlined text-[16px]">logout</span>
+<span>Cerrar sesión</span>
+</button>
+</div>
+</aside>
+<!-- Content Container -->
+<div class="pl-[260px]">
+<!-- Top Bar -->
+<header class="fixed top-0 left-[260px] right-0 h-20 bg-surface/95 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_1px_8px_rgba(0,0,0,0.03)] z-40 px-gutter flex items-center justify-between gap-4">
+<div class="flex items-center gap-4 flex-1 max-w-xl">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">dashboard</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-semibold uppercase tracking-wider text-[11px]">Administración</span>
+</div>
+<div class="relative flex-1 hidden sm:block">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[18px] text-secondary transition-colors">search</span>
+<input class="w-full h-10 pl-10 pr-4 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder-secondary focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/10 transition-all border border-transparent focus:border-outline-variant" placeholder="Buscar propiedades, clientes, códigos..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center bg-surface-container-low rounded-lg p-1 text-on-surface-variant font-label-sm text-label-sm border border-outline-variant/40">
+<button class="px-2.5 py-1 rounded-md bg-surface text-on-surface font-semibold shadow-sm transition-all" type="button">ES</button>
+<button class="px-2.5 py-1 rounded-md text-secondary hover:text-on-surface transition-colors" type="button">EN</button>
+</div>
+<button class="relative w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all duration-200" title="Notificaciones" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-rg-accent ring-2 ring-surface"></span>
+</button>
+<div class="h-6 w-px bg-outline-variant/50 mx-1"></div>
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center ring-2 ring-primary/10 cursor-pointer hover:ring-primary/30 transition-all">
+<span class="material-symbols-outlined text-[18px]">person</span>
+</div>
+</div>
+</header>
+<main class="w-full pt-20 px-gutter bg-surface min-h-screen">
+<div class="flex flex-col w-full pb-24 pt-6">
+<!-- Subheader / Cabecera Superior Interna del Editor -->
+<header class="w-full bg-surface-container-lowest shadow-sm rounded-xl mb-6 px-6 py-5 border border-[#ECEAE7] animate-fade-in">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="flex flex-col gap-1.5 min-w-0">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 font-label-sm text-label-sm text-secondary flex-wrap">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#"><span class="material-symbols-outlined text-[15px]">home</span>Panel</a>
+<span class="text-outline-variant">/</span>
+<a class="hover:text-primary transition-colors" href="#">Propiedades</a>
+<span class="text-outline-variant">/</span>
+<a class="hover:text-primary transition-colors" href="#">Inventario</a>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-medium truncate">CA-001 · Casa moderna en Ricaurte</span>
+<span class="text-outline-variant">/</span>
+<span class="text-primary font-semibold truncate">Editor, datos principales</span>
+</nav>
+<!-- Titular & Chip de Estado -->
+<div class="flex items-center gap-3.5 flex-wrap pt-1">
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">
+                Casa moderna en Ricaurte
+              </h1>
+<span class="font-label-sm text-label-sm font-semibold tracking-wider text-secondary bg-surface-container px-2.5 py-0.5 rounded uppercase border border-[#ECEAE7]">
+                CA-001
+              </span>
+<!-- Status Dropdown Pill -->
+<div class="relative inline-flex items-center">
+<button class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-label-sm font-label-sm font-semibold transition-all duration-200 hover:shadow-sm active:scale-95" id="statusDropdownBtn" style="background-color: #E4F0EB; color: #2F6B57;" type="button">
+<span class="w-2 h-2 rounded-full" style="background-color: #2F6B57;"></span>
+<span>Disponible</span>
+<span class="material-symbols-outlined text-[16px] transition-transform duration-200" id="statusChevron">arrow_drop_down</span>
+</button>
+<div class="hidden absolute top-full left-0 mt-2 w-48 bg-surface-container-lowest rounded-xl shadow-xl p-1.5 z-30 border border-[#ECEAE7] transition-all transform origin-top-left" id="statusDropdown">
+<button class="w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-label-sm text-label-sm text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="w-2 h-2 rounded-full" style="background-color: #2F6B57;"></span>
+<span class="font-medium">Disponible</span>
+<span class="material-symbols-outlined text-[16px] ml-auto text-primary">check</span>
+</button>
+<button class="w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-label-sm text-label-sm text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="w-2 h-2 rounded-full" style="background-color: #3A5F8A;"></span>
+<span class="font-medium">En Construcción</span>
+</button>
+<button class="w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-label-sm text-label-sm text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-medium">Reservada</span>
+</button>
+<button class="w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg font-label-sm text-label-sm text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-medium">Vendida</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Top Action Buttons -->
+<div class="flex items-center gap-2.5 flex-wrap sm:flex-nowrap shrink-0">
+<button class="px-4 py-2.5 rounded-lg bg-surface-container hover:bg-surface-variant text-on-surface font-label-md text-label-md transition-all duration-200 flex items-center gap-1.5 btn-press border border-[#ECEAE7]" type="button">
+<span class="material-symbols-outlined text-[18px]">undo</span>
+<span>Descartar cambios</span>
+</button>
+<button class="px-4 py-2.5 rounded-lg bg-surface-container hover:bg-surface-variant text-on-surface font-label-md text-label-md transition-all duration-200 flex items-center gap-1.5 btn-press border border-[#ECEAE7]" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span>Previsualizar ficha pública</span>
+</button>
+<button class="h-11 px-6 rounded-lg bg-primary hover:bg-neutral-800 text-on-primary font-label-md text-label-md font-semibold transition-all duration-200 flex items-center gap-2 shadow-md hover:shadow-lg btn-press" type="button">
+<span class="material-symbols-outlined text-[19px]">check_circle</span>
+<span>Guardar cambios</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Navegación por pestañas del editor -->
+<nav class="w-full bg-surface-container-lowest rounded-xl shadow-sm px-6 mb-6 overflow-x-auto border border-[#ECEAE7] animate-fade-in delay-100">
+<div class="flex items-center gap-8 min-w-[760px]">
+<!-- Pestaña 1 activa con subrayado rojo de marca #D93A21 -->
+<a class="relative py-4 font-label-md text-label-md font-bold text-primary flex items-center gap-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[18px] text-rg-accent">tune</span>
+<span>1. Datos principales</span>
+<span class="absolute bottom-0 left-0 right-0 h-[3px] bg-rg-accent rounded-t-full transition-all"></span>
+</a>
+<a class="relative py-4 font-label-md text-label-md font-medium text-secondary hover:text-primary flex items-center gap-2 transition-colors duration-150 group" href="#">
+<span class="material-symbols-outlined text-[18px] text-secondary group-hover:text-primary transition-colors">photo_library</span>
+<span>2. Ficha técnica y fotos</span>
+<span class="px-1.5 py-0.5 rounded-full text-label-sm text-[11px] font-semibold bg-surface-container text-secondary group-hover:bg-primary group-hover:text-white transition-colors">10</span>
+</a>
+<a class="relative py-4 font-label-md text-label-md font-medium text-secondary hover:text-primary flex items-center gap-2 transition-colors duration-150 group" href="#">
+<span class="material-symbols-outlined text-[18px] text-secondary group-hover:text-primary transition-colors">videocam</span>
+<span>3. Video y multimedia</span>
+</a>
+<a class="relative py-4 font-label-md text-label-md font-medium text-secondary hover:text-primary flex items-center gap-2 transition-colors duration-150 group" href="#">
+<span class="material-symbols-outlined text-[18px] text-secondary group-hover:text-primary transition-colors">calculate</span>
+<span>4. Simulador y crédito</span>
+</a>
+<a class="relative py-4 font-label-md text-label-md font-medium text-secondary hover:text-primary flex items-center gap-2 transition-colors duration-150 group" href="#">
+<span class="material-symbols-outlined text-[18px] text-secondary group-hover:text-primary transition-colors">help_outline</span>
+<span>5. Preguntas frecuentes</span>
+</a>
+</div>
+</nav>
+<!-- Form Layout: Two-Column Bento Architecture -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- Left Column (8 cols): Primary Editorial & Descriptive Data -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Sección A: Títulos y descripciones con soporte bilingüe -->
+<section class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-[#ECEAE7] animate-fade-in delay-150 hover:shadow-md transition-shadow duration-200">
+<div class="flex items-center justify-between pb-4 mb-6 border-b border-[#ECEAE7]">
+<div class="flex items-center gap-3">
+<span class="w-9 h-9 rounded-lg bg-surface-container text-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">translate</span>
+</span>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface">Títulos y Descripciones</h2>
+<p class="font-body-sm text-body-sm text-secondary">Presentación editorial y posicionamiento en el portal público</p>
+</div>
+</div>
+<!-- Pills conmutadoras de idioma interactivas -->
+<div class="flex items-center bg-surface-container-low rounded-lg p-1 border border-[#ECEAE7] relative">
+<button class="px-3 py-1.5 rounded-md font-label-sm text-label-sm font-semibold bg-surface-container-lowest text-primary shadow-sm transition-all duration-200 flex items-center gap-1.5 btn-press" id="langEsBtn" type="button">
+<span>Español</span>
+<span class="text-[10px] tracking-wide text-secondary font-medium">ES</span>
+</button>
+<button class="px-3 py-1.5 rounded-md font-label-sm text-label-sm font-medium text-secondary hover:text-primary transition-all duration-200 flex items-center gap-1.5 btn-press" id="langEnBtn" type="button">
+<span>English</span>
+<span class="text-[10px] tracking-wide text-secondary font-medium">EN</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-5">
+<!-- Campo Título Español -->
+<div class="transition-all duration-200" id="wrapperTitleEs">
+<label class="block font-semibold text-on-surface text-label-md mb-1.5 flex items-center justify-between" for="propTitleEs">
+<span>TÍTULO EN ESPAÑOL <span class="text-rg-accent">*</span></span>
+<span class="font-label-sm text-label-sm text-secondary font-normal" id="charCountEs">24 / 70 caracteres</span>
+</label>
+<input class="w-full min-h-[48px] px-4 py-3 rounded-lg bg-surface-container-lowest font-body-md text-body-md text-on-surface placeholder:text-secondary border border-[#B0A8A0] form-input-focus" id="propTitleEs" maxlength="70" placeholder="Ej. Penthouse de lujo con vista al Tomebamba" type="text" value="Casa moderna en Ricaurte"/>
+<span class="block mt-1.5 font-body-sm text-body-sm text-secondary">Título público principal optimizado para SEO local e indexación en buscadores.</span>
+</div>
+<!-- Campo Título Inglés -->
+<div class="transition-all duration-200" id="wrapperTitleEn">
+<label class="block font-semibold text-on-surface text-label-md mb-1.5 flex items-center justify-between" for="propTitleEn">
+<span>TÍTULO EN INGLÉS (ENGLISH) <span class="text-rg-accent">*</span></span>
+<span class="font-label-sm text-label-sm text-secondary font-normal" id="charCountEn">23 / 70 caracteres</span>
+</label>
+<input class="w-full min-h-[48px] px-4 py-3 rounded-lg bg-surface-container-lowest font-body-md text-body-md text-on-surface placeholder:text-secondary border border-[#B0A8A0] form-input-focus" id="propTitleEn" maxlength="70" placeholder="e.g. Luxury penthouse overlooking the Tomebamba River" type="text" value="Modern House in Ricaurte"/>
+<span class="block mt-1.5 font-body-sm text-body-sm text-secondary">Traducción para inversionistas y compradores de habla inglesa (Miami / Internacional).</span>
+</div>
+<!-- Descripción Breve -->
+<div>
+<label class="block font-semibold text-on-surface text-label-md mb-1.5 flex items-center justify-between" for="propShortDesc">
+<span>DESCRIPCIÓN BREVE (TARJETAS Y BÚSQUEDA) <span class="text-rg-accent">*</span></span>
+<span class="font-label-sm text-label-sm text-secondary font-normal" id="charCountShort">164 / 200 caracteres</span>
+</label>
+<textarea class="w-full p-4 rounded-lg bg-surface-container-lowest font-body-md text-body-md text-on-surface resize-none placeholder:text-secondary border border-[#B0A8A0] form-input-focus leading-relaxed" id="propShortDesc" maxlength="200" rows="3">Impresionante residencia contemporánea con acabados de primera clase, jardín privado y vista despejada a las colinas en un sector de alta plusvalía residencial.</textarea>
+<span class="block mt-1.5 font-body-sm text-body-sm text-secondary">Extracto sintético visible en los listados y tarjetas de propiedad.</span>
+</div>
+<!-- Descripción Detallada -->
+<div>
+<label class="block font-semibold text-on-surface text-label-md mb-1.5" for="propFullDesc">DESCRIPCIÓN DETALLADA <span class="text-rg-accent">*</span></label>
+<div class="bg-surface-container-low rounded-t-lg p-2.5 flex items-center gap-1.5 text-secondary border border-b-0 border-[#B0A8A0]">
+<button class="p-1.5 rounded hover:bg-surface-container-lowest text-on-surface hover:text-primary transition-all btn-press" title="Negrita" type="button">
+<span class="material-symbols-outlined text-[18px]">format_bold</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-lowest text-on-surface hover:text-primary transition-all btn-press" title="Cursiva" type="button">
+<span class="material-symbols-outlined text-[18px]">format_italic</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-lowest text-on-surface hover:text-primary transition-all btn-press" title="Lista" type="button">
+<span class="material-symbols-outlined text-[18px]">format_list_bulleted</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-lowest text-on-surface hover:text-primary transition-all btn-press" title="Subrayado" type="button">
+<span class="material-symbols-outlined text-[18px]">format_underlined</span>
+</button>
+<div class="w-px h-4 bg-outline-variant mx-1.5"></div>
+<span class="font-label-sm text-label-sm text-secondary/80 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">edit_note</span>
+<span>Editor enriquecido activo</span>
+</span>
+</div>
+<textarea class="w-full p-4 rounded-b-lg bg-surface-container-lowest font-body-md text-body-md text-on-surface resize-y placeholder:text-secondary border border-[#B0A8A0] form-input-focus leading-relaxed" id="propFullDesc" rows="6">Ubicada en una de las zonas más tranquilas y cotizadas de Ricaurte, esta vivienda construida por RG Constructora combina la solidez estructural con una cuidada selección de materiales autóctonos y contemporáneos.
+
+Distribuida en dos niveles con doble altura en la sala principal, cuenta con cocina de concepto abierto, mesones de granito, suite principal con vestidor y baño privado, y un generoso porche social conectado al área verde exterior. Ideal para familias que valoran el silencio y la seguridad a minutos de la urbe.</textarea>
+</div>
+</div>
+</section>
+<!-- Sección D: Tipo de Publicación & Exclusividad RG -->
+<section class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-[#ECEAE7] animate-fade-in delay-200 hover:shadow-md transition-shadow duration-200">
+<div class="flex items-center gap-3 pb-4 mb-6 border-b border-[#ECEAE7]">
+<span class="w-9 h-9 rounded-lg bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</span>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface">Tipo de Publicación y Exclusividad</h2>
+<p class="font-body-sm text-body-sm text-secondary">Regla de negocio: Define el tratamiento comercial y la visibilidad de la insignia</p>
+</div>
+</div>
+<!-- Radio selector cards con hover y elevación -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6" id="publishingTypeCards">
+<!-- Tarjeta Exclusiva RG -->
+<label class="group relative flex flex-col p-5 rounded-xl cursor-pointer bg-primary text-on-primary shadow-md border-2 border-primary transition-all duration-200 hover:scale-[1.01] hover:shadow-lg" id="cardExclusive">
+<input checked="" class="sr-only" name="publishing_type" type="radio" value="exclusive"/>
+<div class="flex items-start justify-between mb-3">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-inverse-surface border border-rg-gold/30 text-rg-gold shadow-sm">
+<span class="material-symbols-outlined text-[16px]">hotel_class</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wide">Exclusiva RG</span>
+</span>
+<span class="w-5 h-5 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</span>
+</div>
+<span class="font-title-md text-title-md font-semibold text-surface-container-lowest mb-1">Contrato de Exclusividad Total</span>
+<p class="font-body-sm text-body-sm text-surface-variant/85 leading-relaxed">Captación gestionada exclusivamente por RG Inmobiliaria. Muestra la insignia dorada institucional en el portal y goza de prioridad algorítmica.</p>
+</label>
+<!-- Tarjeta Red Compartida -->
+<label class="group relative flex flex-col p-5 rounded-xl cursor-pointer bg-surface-container-lowest hover:bg-surface-container-low transition-all duration-200 hover:scale-[1.01] border-2 border-[#ECEAE7] hover:border-[#B0A8A0]" id="cardShared">
+<input class="sr-only" name="publishing_type" type="radio" value="shared"/>
+<div class="flex items-start justify-between mb-3">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">handshake</span>
+<span>Red compartida</span>
+</span>
+<span class="w-5 h-5 rounded-full border-2 border-secondary/40 group-hover:border-secondary transition-colors"></span>
+</div>
+<span class="font-title-md text-title-md font-semibold text-on-surface mb-1">Compartida con otra inmobiliaria</span>
+<p class="font-body-sm text-body-sm text-secondary leading-relaxed">Propiedad en corretaje compartido o captación abierta. No muestra insignia de exclusividad.</p>
+</label>
+</div>
+<!-- Campos dependientes del tipo de publicación -->
+<div class="bg-surface-container-low rounded-xl p-6 flex flex-col gap-5 border border-[#ECEAE7]">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<label class="block font-semibold text-on-surface text-label-md mb-1.5" for="exclusiveExpiry">FECHA DE VENCIMIENTO DE LA EXCLUSIVIDAD</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[18px] text-secondary">calendar_today</span>
+<input class="w-full min-h-[48px] pl-10 pr-4 py-3 rounded-lg bg-surface-container-lowest font-body-md text-body-md text-on-surface border border-[#B0A8A0] form-input-focus" id="exclusiveExpiry" type="text" value="15 de marzo de 2027"/>
+</div>
+<span class="block mt-1 font-body-sm text-body-sm text-secondary">Vigencia reglamentaria según contrato notarial firmado.</span>
+</div>
+<div>
+<label class="block font-semibold text-on-surface text-label-md mb-1.5" for="agentRef">ASESOR TITULAR DE CAPTACIÓN</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[18px] text-secondary">badge</span>
+<input class="w-full min-h-[48px] pl-10 pr-4 py-3 rounded-lg bg-surface-container-low font-body-md text-body-md text-on-surface focus:outline-none cursor-not-allowed text-secondary border border-[#B0A8A0]" id="agentRef" readonly="" type="text" value="Arq. Raúl González (RG Principal)"/>
+</div>
+</div>
+</div>
+<!-- Nota interna confidencial -->
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-[18px] text-rg-accent">lock</span>
+<label class="font-semibold text-on-surface text-label-md" for="internalNote">NOTA INTERNA PRIVADA DE CAPTACIÓN</label>
+</div>
+<div class="p-3.5 rounded-lg bg-[#FBEBE8] border border-rg-accent/20 text-[#851C12] mb-3 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[20px] shrink-0 mt-0.5 text-rg-accent">security</span>
+<p class="font-label-sm text-label-sm leading-relaxed">
+<strong class="font-bold">Confidencialidad Estricta:</strong> Esta información es de uso estrictamente reservado para el equipo directivo de RG. <em>NUNCA</em> se publica en el portal web, ni es visible para compradores, visitantes o corredores externos.
+                  </p>
+</div>
+<textarea class="w-full p-4 rounded-lg bg-surface-container-lowest font-body-md text-body-md text-on-surface border border-[#B0A8A0] form-input-focus" id="internalNote" placeholder="Ingrese acuerdos de honorarios, datos de contacto del propietario o cláusulas de negociación..." rows="3">Propietario acepta negociación hasta $140.000 sin incluir línea blanca. Comisión pactada al 4% neta. Documentos de gravamen levantados en Notaría 5 de Cuenca.</textarea>
+</div>
+</div>
+</section>
+<!-- Sección E: Ubicación y Privacidad (Privacy by Design) -->
+<section class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-[#ECEAE7] animate-fade-in delay-250 hover:shadow-md transition-shadow duration-200">
+<div class="flex items-center gap-3 pb-4 mb-6 border-b border-[#ECEAE7]">
+<span class="w-9 h-9 rounded-lg bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">share_location</span>
+</span>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface">Ubicación y Privacidad</h2>
+<p class="font-body-sm text-body-sm text-secondary">Arquitectura de privacidad: se publica únicamente el cuadrante general</p>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-5">
+<div>
+<label class="block font-semibold text-secondary text-label-sm mb-1.5">PAÍS</label>
+<input class="w-full min-h-[48px] px-4 py-3 rounded-lg bg-surface-container font-body-md text-body-md text-on-surface cursor-not-allowed border border-[#ECEAE7]" readonly="" type="text" value="Ecuador"/>
+</div>
+<div>
+<label class="block font-semibold text-secondary text-label-sm mb-1.5">PROVINCIA</label>
+<input class="w-full min-h-[48px] px-4 py-3 rounded-lg bg-surface-container font-body-md text-body-md text-on-surface cursor-not-allowed border border-[#ECEAE7]" readonly="" type="text" value="Azuay"/>
+</div>
+<div>
+<label class="block font-semibold text-secondary text-label-sm mb-1.5">CIUDAD</label>
+<input class="w-full min-h-[48px] px-4 py-3 rounded-lg bg-surface-container font-body-md text-body-md text-on-surface cursor-not-allowed border border-[#ECEAE7]" readonly="" type="text" value="Cuenca"/>
+</div>
+<div>
+<label class="block font-semibold text-secondary text-label-sm mb-1.5">PARROQUIA</label>
+<input class="w-full min-h-[48px] px-4 py-3 rounded-lg bg-surface-container font-body-md text-body-md text-on-surface cursor-not-allowed border border-[#ECEAE7]" readonly="" type="text" value="Ricaurte"/>
+</div>
+</div>
+<div class="mb-6">
+<label class="block font-semibold text-on-surface text-label-md mb-1.5" for="publicZone">ZONA COMERCIAL / SECTOR VISIBLE EN LA WEB <span class="text-rg-accent">*</span></label>
+<div class="flex items-center gap-3">
+<input class="flex-1 min-h-[48px] px-4 py-3 rounded-lg bg-surface-container-lowest font-body-md text-body-md text-on-surface border border-[#B0A8A0] form-input-focus" id="publicZone" type="text" value="Ricaurte residencial"/>
+<div class="px-4 py-3 rounded-lg bg-surface-container text-secondary font-label-sm text-label-sm flex items-center gap-2 shrink-0 border border-[#ECEAE7] min-h-[48px]">
+<span class="material-symbols-outlined text-[16px] text-primary">visibility</span>
+<span>En portal: <strong class="text-on-surface font-semibold">Cuenca · Ricaurte</strong></span>
+</div>
+</div>
+</div>
+<!-- Mapa interactivo con radar ripple animado de privacidad -->
+<div class="mb-6 rounded-xl overflow-hidden border border-[#ECEAE7] shadow-sm">
+<div class="p-3.5 bg-surface-container-low flex items-center justify-between border-b border-[#ECEAE7]">
+<div class="flex items-center gap-2 text-on-surface font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[18px] text-primary">radar</span>
+<span>Vista previa de geo-privacidad (Zona sombreada pública)</span>
+</div>
+<span class="font-label-sm text-[12px] text-secondary bg-surface-container-lowest px-2.5 py-1 rounded-md shadow-xs border border-[#ECEAE7] flex items-center gap-1 font-medium">
+<span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                  Radio aproximado: 450 m · Dirección protegida
+                </span>
+</div>
+<div class="relative w-full h-64 bg-surface-variant flex items-center justify-center overflow-hidden group">
+<div class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="High quality aerial map view of Ricaurte suburb in Cuenca Ecuador showing river valleys, green hills and quiet residential urban grid under natural soft daylight." data-location="Ricaurte, Cuenca, Ecuador" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCmz9VU8dAiBuRC4k5ccs_45f_hcpvbvK91Ot9SEKgp7QEm6lVnlskTDH3HUT2C_Zxn_bZ8l23U9_yo8Ltploo8Xiw13-2PSNzDYZkmHfDajwNSlLf2GLCl_fru7v5dC2JSG9h0I5TMZr5nj-7jGCCH_6WmDmgLPYoxHsm0AYfnoidulb3QTc91cg0iApZ8yVdK1Vd0dn-sJ0MWx_nN_fcsEH-wKdq_xglVuYUUZ5yN');"></div>
+<div class="absolute inset-0 bg-primary/25 backdrop-blur-[1px]"></div>
+<!-- Radar ripple pulse animations -->
+<div class="absolute w-56 h-56 rounded-full border-2 border-white/40 radar-ring pointer-events-none"></div>
+<div class="relative w-48 h-48 rounded-full bg-primary/30 shadow-2xl flex items-center justify-center border border-white/30 backdrop-blur-xs">
+<div class="w-32 h-32 rounded-full bg-primary/40 flex items-center justify-center transition-transform group-hover:scale-110 duration-300">
+<span class="material-symbols-outlined text-surface text-[32px] drop-shadow-md">share_location</span>
+</div>
+</div>
+<div class="absolute bottom-3 left-3 right-3 sm:right-auto bg-surface-container-lowest/95 backdrop-blur-md px-3.5 py-2.5 rounded-lg shadow-md flex items-center gap-2 border border-[#ECEAE7]">
+<span class="material-symbols-outlined text-[18px] text-secondary">info</span>
+<p class="font-label-sm text-label-sm text-on-surface">Ubicación aproximada. La dirección exacta se comparte únicamente al coordinar la visita con un asesor autorizado.</p>
+</div>
+</div>
+</div>
+<!-- Dirección privada -->
+<div class="bg-surface-container-low rounded-xl p-5 border border-[#ECEAE7]">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">lock</span>
+<label class="font-semibold text-on-surface text-label-md" for="exactAddress">DIRECCIÓN EXACTA Y REFERENCIAS PRIVADAS</label>
+<span class="ml-auto font-label-sm text-[11px] text-secondary bg-surface-container px-2.5 py-0.5 rounded border border-[#B0A8A0]">Solo uso interno RG</span>
+</div>
+<input class="w-full min-h-[48px] px-4 py-3 rounded-lg bg-surface-container-lowest font-body-md text-body-md text-on-surface border border-[#B0A8A0] form-input-focus mb-2" id="exactAddress" type="text" value="Calle de los Sauces 2-45 y Av. Central Ricaurte (Junto a la quinta La Esperanza)"/>
+<p class="font-body-sm text-body-sm text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-outline">verified_user</span>
+<span>Visible únicamente para asesores autorizados al agendar un recorrido presencial en el CRM.</span>
+</p>
+</div>
+</section>
+</div>
+<!-- Right Column (4 cols): Base Commercial Data, Construction Phase & Vitrina Options -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Sección B: Datos Base y Comerciales -->
+<section class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-[#ECEAE7] animate-fade-in delay-150 hover:shadow-md transition-shadow duration-200">
+<div class="flex items-center gap-3 pb-3 mb-5 border-b border-[#ECEAE7]">
+<span class="w-9 h-9 rounded-lg bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</span>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface">Datos Base y Comerciales</h2>
+<p class="font-body-sm text-body-sm text-secondary">Valuación y parámetros mercantiles</p>
+</div>
+</div>
+<div class="flex flex-col gap-5">
+<div>
+<label class="block font-semibold text-secondary text-label-sm mb-1.5">CÓDIGO DE PROPIEDAD (ID ÚNICO)</label>
+<div class="relative">
+<input class="w-full min-h-[48px] px-4 py-3 rounded-lg bg-surface-container font-price-display text-price-display text-on-surface cursor-not-allowed font-mono border border-[#ECEAE7]" readonly="" type="text" value="CA-001"/>
+<span class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-[18px] text-secondary">tag</span>
+</div>
+<span class="block mt-1 font-body-sm text-body-sm text-secondary">Identificador global e invariable en el inventario RG.</span>
+</div>
+<!-- Tipo de Operación: Radio Pills interactivos -->
+<div>
+<label class="block font-semibold text-on-surface text-label-md mb-1.5">TIPO DE OPERACIÓN <span class="text-rg-accent">*</span></label>
+<div class="grid grid-cols-2 gap-2 bg-surface-container p-1 rounded-lg border border-[#B0A8A0]" id="operationTypeGroup">
+<label class="flex items-center justify-center gap-2 py-2.5 rounded-md cursor-pointer transition-all duration-200 bg-surface-container-lowest shadow-sm text-primary font-label-md text-label-md font-semibold" id="opSaleLabel">
+<input checked="" class="sr-only" name="operation_type" type="radio" value="sale"/>
+<span>Venta</span>
+</label>
+<label class="flex items-center justify-center gap-2 py-2.5 rounded-md cursor-pointer transition-all duration-200 hover:text-on-surface text-secondary font-label-md text-label-md font-medium" id="opRentLabel">
+<input class="sr-only" name="operation_type" type="radio" value="rent"/>
+<span>Alquiler</span>
+</label>
+</div>
+</div>
+<!-- Precio de Lista -->
+<div>
+<label class="block font-semibold text-on-surface text-label-md mb-1.5" for="propPrice">PRECIO DE LISTA (USD) <span class="text-rg-accent">*</span></label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 font-title-md text-title-md text-secondary">$</span>
+<input class="w-full min-h-[48px] pl-9 pr-14 py-3 rounded-lg bg-surface-container-lowest font-price-display text-price-display text-on-surface border border-[#B0A8A0] form-input-focus" id="propPrice" type="text" value="145.000"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 font-label-sm text-label-sm text-secondary uppercase font-semibold">USD</span>
+</div>
+</div>
+<!-- Alícuota Mensual -->
+<div>
+<label class="block font-semibold text-on-surface text-label-md mb-1.5" for="propAlicuota">ALÍCUOTA MENSUAL / EXPENSAS (OPCIONAL)</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 font-label-md text-label-md text-secondary">$</span>
+<input class="w-full min-h-[48px] pl-9 pr-14 py-3 rounded-lg bg-surface-container-lowest font-body-md text-body-md text-on-surface border border-[#B0A8A0] form-input-focus" id="propAlicuota" type="text" value="0"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 font-label-sm text-label-sm text-secondary">/mes</span>
+</div>
+<span class="block mt-1 font-body-sm text-body-sm text-secondary">Indique $0 si la propiedad no abona condominio.</span>
+</div>
+<!-- Tipo de Inmueble -->
+<div>
+<label class="block font-semibold text-on-surface text-label-md mb-1.5" for="propType">TIPO DE INMUEBLE <span class="text-rg-accent">*</span></label>
+<div class="relative">
+<select class="w-full min-h-[48px] px-4 py-3 rounded-lg bg-surface-container-lowest font-body-md text-body-md text-on-surface appearance-none cursor-pointer border border-[#B0A8A0] form-input-focus" id="propType">
+<option selected="" value="casa">Casa</option>
+<option value="departamento">Departamento</option>
+<option value="suite">Suite ejecutiva</option>
+<option value="penthouse">Penthouse</option>
+<option value="terreno">Terreno / Lote</option>
+<option value="comercial">Local comercial / Oficina</option>
+<option value="quinta">Quinta / Finca</option>
+</select>
+<span class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-[20px] text-secondary pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Sección C: Etapa Constructiva -->
+<section class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-[#ECEAE7] animate-fade-in delay-200 hover:shadow-md transition-shadow duration-200">
+<div class="flex items-center gap-3 pb-3 mb-5 border-b border-[#ECEAE7]">
+<span class="w-9 h-9 rounded-lg bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">foundation</span>
+</span>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface">Etapa Constructiva</h2>
+<p class="font-body-sm text-body-sm text-secondary">Estatus de obra e historia del inmueble</p>
+</div>
+</div>
+<div class="flex flex-col gap-5">
+<div>
+<label class="block font-semibold text-on-surface text-label-md mb-1.5" for="constructionStage">ETAPA DE LA OBRA <span class="text-rg-accent">*</span></label>
+<div class="relative">
+<select class="w-full min-h-[48px] px-4 py-3 rounded-lg bg-surface-container-lowest font-body-md text-body-md text-on-surface appearance-none cursor-pointer border border-[#B0A8A0] form-input-focus" id="constructionStage">
+<option selected="" value="terminada">Lista para entrega / Terminada</option>
+<option value="en_construccion">En construcción</option>
+<option value="planos">Sobre planos (Preventa)</option>
+<option value="segunda_mano">Segunda mano / Reventa</option>
+</select>
+<span class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-[20px] text-secondary pointer-events-none">expand_more</span>
+</div>
+</div>
+<div>
+<label class="block font-semibold text-on-surface text-label-md mb-1.5" for="buildYear">AÑO DE CONSTRUCCIÓN</label>
+<div class="relative">
+<input class="w-full min-h-[48px] px-4 py-3 rounded-lg bg-surface-container-lowest font-body-md text-body-md text-on-surface border border-[#B0A8A0] form-input-focus" id="buildYear" max="2035" min="1950" type="number" value="2023"/>
+<span class="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-[18px] text-secondary pointer-events-none">event</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Sección F: Opciones de Vitrina y Programas -->
+<section class="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-[#ECEAE7] animate-fade-in delay-250 hover:shadow-md transition-shadow duration-200">
+<div class="flex items-center gap-3 pb-3 mb-5 border-b border-[#ECEAE7]">
+<span class="w-9 h-9 rounded-lg bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">stars</span>
+</span>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface">Vitrina y Programas</h2>
+<p class="font-body-sm text-body-sm text-secondary">Posicionamiento en portada y créditos</p>
+</div>
+</div>
+<div class="flex flex-col gap-5">
+<!-- Switch Destacada en vitrina -->
+<div class="flex items-start justify-between gap-4 p-4 rounded-xl bg-surface-container-low border border-[#ECEAE7] hover:border-[#B0A8A0] transition-colors duration-200">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface text-label-md">Destacada en vitrina</span>
+<span class="font-body-sm text-body-sm text-secondary">Aparece en la sección destacada de inicio del portal web.</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5" for="featuredToggle">
+<input checked="" class="sr-only peer" id="featuredToggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all after:shadow-sm peer-checked:bg-primary transition-colors"></div>
+</label>
+</div>
+<!-- Switch Slider principal de inicio -->
+<div class="flex items-start justify-between gap-4 p-4 rounded-xl bg-surface-container-low border border-[#ECEAE7] hover:border-[#B0A8A0] transition-colors duration-200">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-on-surface text-label-md">Slider principal de inicio</span>
+<span class="font-label-sm text-[11px] px-2 py-0.5 rounded-full bg-surface-container-lowest text-on-surface font-semibold border border-[#ECEAE7]">1 de 3 cupos</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Incluir en el carrusel de gran formato en la portada.</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5" for="sliderToggle">
+<input checked="" class="sr-only peer" id="sliderToggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all after:shadow-sm peer-checked:bg-primary transition-colors"></div>
+</label>
+</div>
+<!-- Programa de Crédito Preferencial -->
+<div>
+<label class="block font-semibold text-on-surface text-label-md mb-2">PROGRAMA DE CRÉDITO PREFERENCIAL</label>
+<div class="flex flex-col gap-2.5">
+<label class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-container-lowest cursor-pointer hover:bg-surface-container-low transition-all duration-150 border border-[#B0A8A0]">
+<input checked="" class="w-4 h-4 text-primary focus:ring-primary" name="housing_program" type="radio" value="none"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">General / No aplica</span>
+<span class="font-body-sm text-body-sm text-secondary">Crédito hipotecario convencional bancario o BIESS regular.</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-container-lowest cursor-pointer hover:bg-surface-container-low transition-all duration-150 border border-[#B0A8A0]">
+<input class="w-4 h-4 text-primary focus:ring-primary" name="housing_program" type="radio" value="vip"/>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Vivienda VIP (4.99%)</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">help_outline</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Hasta $105.340 para primera vivienda con tasa subsidiada.</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-container-lowest cursor-pointer hover:bg-surface-container-low transition-all duration-150 border border-[#B0A8A0]">
+<input class="w-4 h-4 text-primary focus:ring-primary" name="housing_program" type="radio" value="vis"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Vivienda VIS</span>
+<span class="font-body-sm text-body-sm text-secondary">Interés social de segmento preferencial subsidiado.</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- Widget de Auditoría / Información del registro -->
+<div class="p-4 rounded-xl bg-surface-container-low font-label-sm text-label-sm text-secondary flex flex-col gap-2 border border-[#ECEAE7] animate-fade-in delay-300">
+<div class="flex items-center justify-between pb-1.5 border-b border-[#ECEAE7]">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[15px]">person_outline</span>Creado por:</span>
+<span class="font-semibold text-on-surface">Raúl (Super admin)</span>
+</div>
+<div class="flex items-center justify-between pb-1.5 border-b border-[#ECEAE7]">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[15px]">schedule</span>Última modificación:</span>
+<span class="text-on-surface">Hoy, 10:42 AM</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[15px]">history</span>Versión de ficha:</span>
+<span class="font-mono text-on-surface font-semibold bg-surface-container-lowest px-2 py-0.5 rounded border border-[#ECEAE7]">v1.4.2</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Floating Save Bar with subtle pulse and interactive buttons -->
+<div class="fixed bottom-6 right-6 left-[284px] z-30 hidden md:flex items-center justify-between bg-primary text-on-primary px-6 py-3.5 rounded-xl shadow-2xl backdrop-blur-md border border-inverse-surface/80 animate-fade-in">
+<div class="flex items-center gap-3">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+</span>
+<span class="font-label-md text-label-md text-surface tracking-wide">
+            Hay cambios en los datos principales de <strong class="text-white font-semibold">CA-001</strong> · Guardados localmente
+          </span>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 rounded-lg bg-inverse-surface hover:bg-neutral-800 text-surface font-label-sm text-label-sm transition-all duration-150 btn-press" type="button">
+            Descartar
+          </button>
+<button class="px-5 py-2 rounded-lg bg-surface text-primary font-label-md text-label-md font-semibold hover:bg-white transition-all duration-150 shadow-md btn-press flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Guardar cambios</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script>
+  // Micro-interacción: Dropdown de estado con animación de rotación
+  const statusBtn = document.getElementById('statusDropdownBtn');
+  const statusDropdown = document.getElementById('statusDropdown');
+  const statusChevron = document.getElementById('statusChevron');
+
+  if (statusBtn && statusDropdown) {
+    statusBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isHidden = statusDropdown.classList.contains('hidden');
+      if (isHidden) {
+        statusDropdown.classList.remove('hidden');
+        if (statusChevron) statusChevron.style.transform = 'rotate(180deg)';
+      } else {
+        statusDropdown.classList.add('hidden');
+        if (statusChevron) statusChevron.style.transform = 'rotate(0deg)';
+      }
+    });
+
+    document.addEventListener('click', () => {
+      if (!statusDropdown.classList.contains('hidden')) {
+        statusDropdown.classList.add('hidden');
+        if (statusChevron) statusChevron.style.transform = 'rotate(0deg)';
+      }
+    });
+  }
+
+  // Micro-interacción: Conmutador de idioma ES / EN
+  const langEsBtn = document.getElementById('langEsBtn');
+  const langEnBtn = document.getElementById('langEnBtn');
+  const titleEsWrapper = document.getElementById('wrapperTitleEs');
+  const titleEnWrapper = document.getElementById('wrapperTitleEn');
+
+  if (langEsBtn && langEnBtn && titleEsWrapper && titleEnWrapper) {
+    langEsBtn.addEventListener('click', () => {
+      langEsBtn.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-semibold');
+      langEsBtn.classList.remove('text-secondary', 'font-medium');
+      langEnBtn.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-semibold');
+      langEnBtn.classList.add('text-secondary', 'font-medium');
+      titleEsWrapper.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      titleEsWrapper.querySelector('input')?.focus();
+    });
+
+    langEnBtn.addEventListener('click', () => {
+      langEnBtn.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-semibold');
+      langEnBtn.classList.remove('text-secondary', 'font-medium');
+      langEsBtn.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-semibold');
+      langEsBtn.classList.add('text-secondary', 'font-medium');
+      titleEnWrapper.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      titleEnWrapper.querySelector('input')?.focus();
+    });
+  }
+
+  // Micro-interacción: Contador dinámico de caracteres
+  const bindCharCount = (inputId, countId, max) => {
+    const el = document.getElementById(inputId);
+    const countEl = document.getElementById(countId);
+    if (el && countEl) {
+      el.addEventListener('input', () => {
+        countEl.textContent = `${el.value.length} / ${max} caracteres`;
+      });
+    }
+  };
+  bindCharCount('propTitleEs', 'charCountEs', 70);
+  bindCharCount('propTitleEn', 'charCountEn', 70);
+  bindCharCount('propShortDesc', 'charCountShort', 200);
+
+  // Micro-interacción: Radio selector de Exclusividad RG vs Compartida
+  const cardExclusive = document.getElementById('cardExclusive');
+  const cardShared = document.getElementById('cardShared');
+
+  if (cardExclusive && cardShared) {
+    const radioEx = cardExclusive.querySelector('input[type="radio"]');
+    const radioSh = cardShared.querySelector('input[type="radio"]');
+
+    const updateRadioCards = () => {
+      if (radioEx.checked) {
+        cardExclusive.className = "group relative flex flex-col p-5 rounded-xl cursor-pointer bg-primary text-on-primary shadow-md border-2 border-primary transition-all duration-200 hover:scale-[1.01]";
+        cardShared.className = "group relative flex flex-col p-5 rounded-xl cursor-pointer bg-surface-container-lowest hover:bg-surface-container-low transition-all duration-200 hover:scale-[1.01] border-2 border-[#ECEAE7]";
+        
+        cardExclusive.querySelector('.w-5').className = "w-5 h-5 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary group-hover:scale-110 transition-transform";
+        cardExclusive.querySelector('.w-5').innerHTML = '<span class="material-symbols-outlined text-[16px] font-bold">check</span>';
+        
+        cardShared.querySelector('.w-5').className = "w-5 h-5 rounded-full border-2 border-secondary/40 group-hover:border-secondary transition-colors";
+        cardShared.querySelector('.w-5').innerHTML = '';
+      } else {
+        cardShared.className = "group relative flex flex-col p-5 rounded-xl cursor-pointer bg-primary text-on-primary shadow-md border-2 border-primary transition-all duration-200 hover:scale-[1.01]";
+        cardExclusive.className = "group relative flex flex-col p-5 rounded-xl cursor-pointer bg-surface-container-lowest hover:bg-surface-container-low transition-all duration-200 hover:scale-[1.01] border-2 border-[#ECEAE7]";
+        
+        cardShared.querySelector('.w-5').className = "w-5 h-5 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary group-hover:scale-110 transition-transform";
+        cardShared.querySelector('.w-5').innerHTML = '<span class="material-symbols-outlined text-[16px] font-bold">check</span>';
+        
+        cardExclusive.querySelector('.w-5').className = "w-5 h-5 rounded-full border-2 border-secondary/40 group-hover:border-secondary transition-colors";
+        cardExclusive.querySelector('.w-5').innerHTML = '';
+      }
+    };
+
+    radioEx?.addEventListener('change', updateRadioCards);
+    radioSh?.addEventListener('change', updateRadioCards);
+  }
+
+  // Micro-interacción: Operación Venta / Alquiler switch
+  const opSaleLabel = document.getElementById('opSaleLabel');
+  const opRentLabel = document.getElementById('opRentLabel');
+  if (opSaleLabel && opRentLabel) {
+    const saleRadio = opSaleLabel.querySelector('input');
+    const rentRadio = opRentLabel.querySelector('input');
+
+    opSaleLabel.addEventListener('click', () => {
+      saleRadio.checked = true;
+      opSaleLabel.className = "flex items-center justify-center gap-2 py-2.5 rounded-md cursor-pointer transition-all duration-200 bg-surface-container-lowest shadow-sm text-primary font-label-md text-label-md font-semibold";
+      opRentLabel.className = "flex items-center justify-center gap-2 py-2.5 rounded-md cursor-pointer transition-all duration-200 hover:text-on-surface text-secondary font-label-md text-label-md font-medium";
+    });
+
+    opRentLabel.addEventListener('click', () => {
+      rentRadio.checked = true;
+      opRentLabel.className = "flex items-center justify-center gap-2 py-2.5 rounded-md cursor-pointer transition-all duration-200 bg-surface-container-lowest shadow-sm text-primary font-label-md text-label-md font-semibold";
+      opSaleLabel.className = "flex items-center justify-center gap-2 py-2.5 rounded-md cursor-pointer transition-all duration-200 hover:text-on-surface text-secondary font-label-md text-label-md font-medium";
+    });
+  }
+</script>
+</body></html>

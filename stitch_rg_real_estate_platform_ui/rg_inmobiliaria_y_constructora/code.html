@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-container": "#858383", "tertiary": "#000000", "on-tertiary-container": "#ed482e", "on-tertiary-fixed": "#3f0300", "surface-dim": "#dbdad7", "surface-tint": "#5f5e5e", "surface-container-high": "#eae8e5", "on-surface": "#1b1c1a", "on-background": "#1b1c1a", "secondary-fixed-dim": "#cdc5bf", "inverse-primary": "#c8c6c5", "secondary-container": "#eae1da", "error-container": "#ffdad6", "outline": "#747878", "inverse-surface": "#30312f", "on-primary": "#ffffff", "inverse-on-surface": "#f2f0ed", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#ffdad3", "primary-fixed-dim": "#c8c6c5", "tertiary-fixed-dim": "#ffb4a6", "primary-container": "#1c1b1b", "on-secondary-fixed": "#1f1b17", "surface": "#fbf9f6", "on-surface-variant": "#444748", "secondary": "#635d58", "surface-bright": "#fbf9f6", "surface-container": "#f0edea", "on-error": "#ffffff", "error": "#ba1a1a", "background": "#fbf9f6", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#4b4641", "surface-variant": "#e4e2df", "on-secondary": "#ffffff", "secondary-fixed": "#eae1da", "primary": "#000000", "surface-container-highest": "#e4e2df", "on-primary-fixed-variant": "#474646", "on-primary-fixed": "#1c1b1b", "on-tertiary-fixed-variant": "#8f1000", "on-secondary-container": "#69635e", "on-tertiary": "#ffffff", "outline-variant": "#c4c7c7", "primary-fixed": "#e5e2e1", "tertiary-container": "#3f0300", "surface-container-low": "#f5f3f0" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "gutter-mobile": "1rem", "margin": "3rem", "space-sm": "0.5rem", "margin-tablet": "2rem", "gutter": "1.5rem", "space-xl": "2.5rem", "margin-mobile": "1.25rem", "space-md": "1rem", "space-xs": "0.25rem" }, "fontFamily": { "headline-lg-mobile": ["Montserrat"], "label-md": ["Inter"], "display-xl-mobile": ["Montserrat"], "price-display": ["Montserrat"], "body-sm": ["Inter"], "headline-lg": ["Montserrat"], "headline-md": ["Montserrat"], "title-md": ["Montserrat"], "body-md": ["Inter"], "body-lg": ["Inter"], "label-sm": ["Inter"], "display-xl": ["Montserrat"], "headline-sm": ["Montserrat"] }, "fontSize": { "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "display-xl-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "price-display": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "display-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest border-b border-surface-variant"><div class="h-20 max-w-7xl mx-auto px-gutter flex items-center justify-between gap-space-md"><a class="flex items-center gap-space-sm flex-shrink-0 group" data-path="inicio" href="#"><div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-headline-sm text-headline-sm font-bold tracking-tight">RG</div><div class="flex flex-col"><span class="font-title-md text-title-md text-on-surface tracking-tight leading-tight">Inmobiliaria Constructora</span><span class="font-label-sm text-label-sm text-on-surface-variant">Cuenca • Miami</span></div></a><nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-primary font-title-md border-b-2 border-primary"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="comprar" href="#">Comprar</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="alquilar" href="#">Alquilar</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="zonas" href="#">Zonas</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="servicios" href="#">Servicios</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="blog" href="#">Blog</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="quienes-somos" href="#">Quiénes somos</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="contacto" href="#">Contacto</a></nav><div class="flex items-center gap-space-md flex-shrink-0"><div class="flex items-center gap-space-xs pr-space-md border-r border-surface-variant"><button class="font-label-md text-label-md text-primary font-bold px-1" type="button">ES</button><span class="text-outline-variant font-label-sm text-label-sm">|</span><button class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-1 transition-colors" type="button">EN</button></div><a class="h-12 px-space-lg rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center hover:bg-primary-container transition-colors shadow-[0_1px_8px_rgba(0,0,0,0.04)]" data-path="agendar-cita" href="#">Agendar una visita</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface flex-grow"><div class="flex flex-col w-full">
+<!-- SECTION 1: HERO SECTION -->
+<section class="relative w-full min-h-[640px] flex items-center justify-center -mt-20 pt-28 pb-16 bg-surface-container-high overflow-hidden">
+<!-- Full-bleed background image with subtle dark gradient overlay -->
+<div class="absolute inset-0 w-full h-full bg-cover bg-center" data-alt="Expansive architectural residence with contemporary clean concrete lines, warm bespoke timber slatted finishes, floor-to-ceiling panoramic glass, and soft ambient twilight lighting highlighting minimalist interior luxury." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCmQ2v2hjCMU26bzvn7yAiXUJqowxMXyEmhs_IlqxA4CI8QHr16AQa103W0w0W1FSCZy7ia10KwOeqVVy7wsfGmOqfGqj4tMD8NQYJecx-S_0R8erTQw3M4h2VIZJlWPp2utlKqRK_nCE8QKeruzka2GnCEC4bDRk3m7Kyj3Ydoud0sdpJzvD_kbLkWP8dKIsM5xV9oD2PHuNkfDVM7gt0k3niKWKretBnHOk_qe4wP')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/35 pointer-events-none"></div>
+<div class="relative z-10 w-full max-w-7xl mx-auto px-gutter flex flex-col items-center text-center">
+<!-- Title & Subtitle -->
+<h1 class="font-display-xl text-display-xl font-bold text-surface-container-lowest tracking-tight max-w-4xl mb-space-sm drop-shadow-sm">
+        Encuentra tu próximo hogar
+      </h1>
+<p class="font-body-lg text-body-lg text-surface-container-low max-w-2xl mb-space-lg font-normal">
+        Casas, departamentos y terrenos en Ecuador y Miami, con asesoría de principio a fin.
+      </p>
+<!-- Search Panel -->
+<div class="w-full max-w-4xl bg-surface-container-lowest rounded-xl shadow-[0_12px_40px_rgba(0,0,0,0.12)] p-6 md:p-space-lg text-left flex flex-col gap-4 border border-[#ECEAE7]">
+<!-- Row 1: Segmented operation tabs -->
+<div class="flex items-center gap-2">
+<button class="h-10 px-6 rounded-lg bg-[#111111] text-surface-container-lowest font-label-md text-label-md font-semibold transition-all" id="tab-comprar" type="button">
+            Comprar
+          </button>
+<button class="h-10 px-6 rounded-lg bg-transparent text-[#6B6560] hover:bg-[#F5F3F1] font-label-md text-label-md font-medium transition-all" id="tab-alquilar" type="button">
+            Alquilar
+          </button>
+</div>
+<!-- Row 2: Secondary search mode selector -->
+<div class="flex items-center gap-2 pt-1">
+<button class="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#F5F3F1] text-[#111111] font-label-md text-label-sm font-semibold border border-[#ECEAE7] transition-colors" id="mode-ia" type="button">
+<span class="text-sm">✨</span>
+<span>Buscar con IA</span>
+</button>
+<button class="flex items-center gap-1 px-4 py-1.5 rounded-full bg-transparent text-[#6B6560] hover:text-[#111111] font-label-md text-label-sm font-medium transition-colors" id="mode-filtros" type="button">
+<span>Usar filtros</span>
+</button>
+</div>
+<!-- Row 3: Multiline prompt input with Search CTA button -->
+<div class="flex flex-col md:flex-row items-stretch gap-3">
+<div class="relative flex-grow">
+<textarea class="w-full resize-none rounded-lg border border-[#ECEAE7] p-3 text-body-md text-[#111111] placeholder:text-[#6B6560] focus:outline-none focus:border-[#111111] bg-surface-container-lowest font-body-md" id="ai-search-input" placeholder="Cuéntanos qué buscas. Ej: departamento de 3 habitaciones en Ricaurte hasta $120.000" rows="2"></textarea>
+</div>
+<button class="h-12 md:h-auto md:min-h-[58px] px-8 rounded-lg bg-[#111111] text-surface-container-lowest font-label-md text-label-md font-medium hover:bg-black/90 transition-all flex items-center justify-center gap-2 flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-[20px]">search</span>
+<span>Buscar</span>
+</button>
+</div>
+<!-- Row 4: Suggestions chips -->
+<div class="flex flex-wrap items-center gap-2 pt-1">
+<span class="font-label-sm text-label-sm text-[#6B6560] font-medium mr-1">Prueba con:</span>
+<button class="px-3.5 py-1.5 rounded-full bg-[#F5F3F1] hover:bg-[#eae8e5] text-label-sm text-[#111111] font-label-sm border border-[#ECEAE7] transition-colors text-left" onclick="setQuery('Casa de 3 habitaciones en Cuenca hasta $150.000')" type="button">
+            Casa de 3 habitaciones en Cuenca hasta $150.000
+          </button>
+<button class="px-3.5 py-1.5 rounded-full bg-[#F5F3F1] hover:bg-[#eae8e5] text-label-sm text-[#111111] font-label-sm border border-[#ECEAE7] transition-colors text-left" onclick="setQuery('Departamento para alquilar con parqueadero')" type="button">
+            Departamento para alquilar con parqueadero
+          </button>
+<button class="px-3.5 py-1.5 rounded-full bg-[#F5F3F1] hover:bg-[#eae8e5] text-label-sm text-[#111111] font-label-sm border border-[#ECEAE7] transition-colors text-left" onclick="setQuery('Terreno en Turi')" type="button">
+            Terreno en Turi
+          </button>
+</div>
+<!-- Row 5: AI Privacy & Bounds notice -->
+<p class="font-body-sm text-label-sm text-[#6B6560] pt-1 border-t border-[#ECEAE7]/60">
+          Buscamos solo entre las propiedades de RG. No escribas datos personales.
+        </p>
+</div>
+</div>
+</section>
+<!-- SECTION 2: NUEVAS PROPIEDADES -->
+<section class="w-full max-w-7xl mx-auto px-gutter py-space-xl">
+<!-- Header with 3px red accent line -->
+<div class="flex flex-col items-start mb-space-lg">
+<h2 class="font-headline-lg text-headline-lg font-bold text-[#111111] tracking-tight">
+        Nuevas propiedades
+      </h2>
+<div class="w-12 h-[3px] bg-[#D93A21] rounded-full mt-2"></div>
+</div>
+<!-- Carousel Container (1200x420 standard bounds) -->
+<div class="relative w-full h-[440px] md:h-[420px] rounded-2xl overflow-hidden bg-surface-container shadow-sm border border-[#ECEAE7]">
+<!-- Slide 1 (Active) -->
+<div class="carousel-slide absolute inset-0 w-full h-full transition-opacity duration-500 ease-in-out opacity-100 z-10" id="carousel-slide-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="Sophisticated modern architectural residence in Ricaurte Cuenca featuring honest concrete slabs, natural andesite stone masonry, warm cedar paneling, warm interior lighting, and lush manicured lawn garden." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCX4A2G55SC28lut5Nj2F2D8REkshqbvNIKtUkdFk7IGWC8yTxqhH4t-FKiyd4nXlFJFfQytae5A9c-qfY4vlBoN4iiARBbo8BEto1Mb9gyPqFjl8Nw_lo1RpAEXj7GZ2htvQbaCmt01WbzQ-vLLaDTJV8atPrkMfendPcTRLV8RIPE_0kbFyenNlwFq_f9mJnKBCCIFxGqfC00UWs17vX12vMZwTIV-hR-7XQ7tkho')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-space-xl">
+<div class="max-w-2xl text-left">
+<div class="flex items-center gap-2 mb-3">
+<span class="px-3 py-1 rounded bg-[#111111]/80 backdrop-blur-sm text-surface-container-lowest font-label-sm text-label-sm font-semibold tracking-wide uppercase">
+                Venta
+              </span>
+<span class="flex items-center gap-1 px-3 py-1 rounded bg-[#111111] text-[#C9A25C] font-label-sm text-label-sm font-semibold tracking-wide">
+<span>★</span> Exclusiva RG
+              </span>
+</div>
+<h3 class="font-headline-lg text-headline-lg font-bold text-surface-container-lowest mb-1">
+              Casa moderna en Ricaurte
+            </h3>
+<p class="font-body-md text-surface-container-low mb-3 flex items-center gap-1.5 font-normal">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span>Cuenca · Ricaurte</span>
+</p>
+<div class="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-white/20">
+<span class="font-price-display text-price-display font-bold text-surface-container-lowest">
+                $145.000
+              </span>
+<a class="h-11 px-6 rounded-lg bg-[#111111] text-surface-container-lowest font-label-md text-label-md font-medium hover:bg-black/80 transition-colors flex items-center justify-center border border-white/10" href="#">
+                Ver propiedad
+              </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Slide 2 -->
+<div class="carousel-slide absolute inset-0 w-full h-full transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0" id="carousel-slide-1">
+<div class="w-full h-full bg-cover bg-center" data-alt="Chic modern city apartment interior in Cuenca with generous sunlit living terrace balcony, warm hardwood floors, contemporary designer furnishings, and floor-to-ceiling glass doors." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDOGIF4DxIyXgh1Kg-sn9uz0PXWTHFk8lKfKnJivOyzp2E24kwyU4ofilGEeQn4ZcXgdUQ7vDkSoAxVTBUmWiAB9ujxknw6egN_cFO4dtEzMKIQj4-nmwLeEhl-uG9J4nJGxmWBlFAM1eSY8d2qfBnEhEB8sNyJsOMVoBw1vLKSIXvckJriCZKoT2zj_pnAElqfm1rOhn2BGbVaiLEbFKrM3ex9ATikz3hw1F97nb0M')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-space-xl">
+<div class="max-w-2xl text-left">
+<div class="flex items-center gap-2 mb-3">
+<span class="px-3 py-1 rounded bg-[#111111]/80 backdrop-blur-sm text-surface-container-lowest font-label-sm text-label-sm font-semibold tracking-wide uppercase">
+                Venta
+              </span>
+</div>
+<h3 class="font-headline-lg text-headline-lg font-bold text-surface-container-lowest mb-1">
+              Departamento con balcón en Totoracocha
+            </h3>
+<p class="font-body-md text-surface-container-low mb-3 flex items-center gap-1.5 font-normal">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span>Cuenca · Totoracocha</span>
+</p>
+<div class="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-white/20">
+<span class="font-price-display text-price-display font-bold text-surface-container-lowest">
+                $98.500
+              </span>
+<a class="h-11 px-6 rounded-lg bg-[#111111] text-surface-container-lowest font-label-md text-label-md font-medium hover:bg-black/80 transition-colors flex items-center justify-center border border-white/10" href="#">
+                Ver propiedad
+              </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Slide 3 -->
+<div class="carousel-slide absolute inset-0 w-full h-full transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0" id="carousel-slide-2">
+<div class="w-full h-full bg-cover bg-center" data-alt="Striking modern multi-story residential building under clean structural construction with modern geometric balconies, exposed textured concrete framing, glass parapets, and warm sunset glow." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAgHKAz9Z-OFh0MsKKgRlnwa_e1Gbl7ZTFvh7zlFBBb7AiPSxpX8sLxZkC_Gu8hyCknaOGvg29kSIyjENngAppFt81q63waBmCNKiUDMDyNA6IjISmzW6CvAcPqsq-ibPFltcJA_16nomThwCYvOJtwIRk-UJr3ly0O8nntu0aSYc1UbvO7k2p31Wr4S1--tqCQK24BY0OsdBMXe8ZzdWak62GA9rrZmOXCRjeGQu0h')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-space-xl">
+<div class="max-w-2xl text-left">
+<div class="flex items-center gap-2 mb-3">
+<span class="px-3 py-1 rounded bg-[#111111]/80 backdrop-blur-sm text-surface-container-lowest font-label-sm text-label-sm font-semibold tracking-wide uppercase">
+                Venta en planos
+              </span>
+<span class="flex items-center gap-1 px-3 py-1 rounded bg-[#111111] text-[#C9A25C] font-label-sm text-label-sm font-semibold tracking-wide">
+<span>★</span> Exclusiva RG
+              </span>
+</div>
+<h3 class="font-headline-lg text-headline-lg font-bold text-surface-container-lowest mb-1">
+              Edificio Mirador
+            </h3>
+<p class="font-body-md text-surface-container-low mb-3 flex items-center gap-1.5 font-normal">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span>Cuenca · El Batán</span>
+</p>
+<div class="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-white/20">
+<span class="font-price-display text-price-display font-bold text-surface-container-lowest">
+                Desde $89.000
+              </span>
+<a class="h-11 px-6 rounded-lg bg-[#111111] text-surface-container-lowest font-label-md text-label-md font-medium hover:bg-black/80 transition-colors flex items-center justify-center border border-white/10" href="#">
+                Ver propiedad
+              </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Carousel Controls: Indicators & Circular Arrows -->
+<div class="flex items-center justify-between mt-4 px-2">
+<!-- Dots -->
+<div class="flex items-center gap-2">
+<button aria-label="Ir a diapositiva 1" class="w-7 h-2 rounded-full bg-[#111111] transition-all" id="dot-0" onclick="goToSlide(0)" type="button"></button>
+<button aria-label="Ir a diapositiva 2" class="w-2.5 h-2 rounded-full bg-[#cdc5bf] hover:bg-[#635d58] transition-all" id="dot-1" onclick="goToSlide(1)" type="button"></button>
+<button aria-label="Ir a diapositiva 3" class="w-2.5 h-2 rounded-full bg-[#cdc5bf] hover:bg-[#635d58] transition-all" id="dot-2" onclick="goToSlide(2)" type="button"></button>
+</div>
+<!-- Arrow Buttons -->
+<div class="flex items-center gap-2">
+<button aria-label="Anterior diapositiva" class="w-11 h-11 rounded-full bg-surface-container-lowest border border-[#ECEAE7] hover:border-[#111111] text-[#111111] flex items-center justify-center transition-colors shadow-sm" onclick="prevSlide()" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<button aria-label="Siguiente diapositiva" class="w-11 h-11 rounded-full bg-surface-container-lowest border border-[#ECEAE7] hover:border-[#111111] text-[#111111] flex items-center justify-center transition-colors shadow-sm" onclick="nextSlide()" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- SECTION 3: EXCLUSIVAS RG -->
+<section class="w-full bg-[#F5F3F1] py-space-xl border-y border-[#ECEAE7]">
+<div class="max-w-7xl mx-auto px-gutter">
+<!-- Header with Red accent and Right-aligned link -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-[#111111] tracking-tight">
+            Exclusivas RG
+          </h2>
+<div class="w-12 h-[3px] bg-[#D93A21] rounded-full mt-2 mb-2"></div>
+<p class="font-body-md text-body-md text-[#6B6560]">
+            Propiedades que solo encuentras con nosotros
+          </p>
+</div>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md font-semibold text-[#111111] hover:text-[#D93A21] transition-colors" href="#">
+<span>Ver todas las exclusivas</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+</div>
+<!-- Row of 3 Exclusive Cards (Samples 1, 2, 5) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1: Sample 1 -->
+<article class="bg-surface-container-lowest rounded-xl border border-[#ECEAE7] overflow-hidden flex flex-col group hover:shadow-[0_8px_24px_rgba(17,17,17,0.06)] transition-all">
+<div class="relative aspect-[16/10] w-full overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Modern private residence in Cuenca Ricaurte with clean horizontal roof planes, natural stone cladding, wide floor glass windows, and landscaped driveway." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAqzmxGcyTIRccNkVXgqdpq13XlT5zE330tTXl0U4QusqrGNfTPPHgOFmajz8MfvnB2Qz0FxwPehjbj1SgZntropVGDAckEIAassGnl7Y9dNJx3VM3xa-hgk6CFl-qUcpZZGXTTGx-gCa25bdicM3Z-wFDGQRea7Dj0yU68JfGuSDO7cK8QbXjZWkUtLJiL3-zd2EQsesyFARoLagPofTKQdZUBpiVIHl0M2osXYCcT')"></div>
+<!-- Top Badges -->
+<div class="absolute top-3 left-3 flex flex-col gap-1.5 items-start">
+<span class="px-2.5 py-1 rounded bg-[#111111]/85 backdrop-blur-sm text-surface-container-lowest font-label-sm text-label-sm font-medium">
+                Venta
+              </span>
+<span class="flex items-center gap-1 px-2.5 py-1 rounded bg-[#111111] text-[#C9A25C] font-label-sm text-label-sm font-semibold tracking-tight shadow-sm">
+<span>★</span> Exclusiva RG
+              </span>
+</div>
+<!-- Favorite button -->
+<button aria-label="Guardar en favoritos" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest text-[#111111] flex items-center justify-center shadow-sm hover:scale-110 transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">favorite_border</span>
+</button>
+<!-- Status Badge -->
+<div class="absolute bottom-3 left-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#E4F0EB] text-[#2F6B57] font-label-sm text-label-sm font-medium border border-[#2F6B57]/20">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Disponible</span>
+</span>
+</div>
+</div>
+<!-- Body -->
+<div class="p-5 flex flex-col flex-grow justify-between gap-4">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-price-display text-price-display font-bold text-[#111111]">$145.000</span>
+<span class="font-label-sm text-label-sm text-[#6B6560] font-mono">CA-001</span>
+</div>
+<h3 class="font-title-md text-title-md font-semibold text-[#111111] group-hover:text-[#D93A21] transition-colors truncate">
+                Casa moderna en Ricaurte
+              </h3>
+<p class="font-body-sm text-body-sm text-[#6B6560] mt-0.5 mb-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Cuenca · Ricaurte</span>
+</p>
+<div class="flex items-center gap-4 py-2 border-y border-[#ECEAE7] text-[#6B6560] font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">bed</span>
+<span>3 hab</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">bathtub</span>
+<span>2 baños</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">square_foot</span>
+<span>180 m²</span>
+</div>
+</div>
+</div>
+<a class="h-10 w-full rounded-lg bg-[#111111] text-surface-container-lowest font-label-md text-label-md font-medium hover:bg-black/85 transition-colors flex items-center justify-center" href="#">
+              Ver detalles
+            </a>
+</div>
+</article>
+<!-- Card 2: Sample 2 -->
+<article class="bg-surface-container-lowest rounded-xl border border-[#ECEAE7] overflow-hidden flex flex-col group hover:shadow-[0_8px_24px_rgba(17,17,17,0.06)] transition-all">
+<div class="relative aspect-[16/10] w-full overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Sophisticated light-filled apartment in Cuenca Totoracocha with private covered terrace balcony overlooking lush Andean urban park trees, contemporary floor plan." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCw_9uGX9xQGNJ__G45VJ4L_b2R0wEBAffmR5FRgKvYtEDmgK5AkWjDcveOGcCwxu7CcJPWX6ElZ5U05weHWfkNc2T8kNb6LZTsrD6XeP7TfrOQnbS-3vX1IAWXTS189VQonwtPMrOdLnhmXla4GHsoaP35gMqhizSRuHQ8qu-j5zml-3z3Ke0fZ1iHx-hXqOSv1fwThurpp8xe-sDQzpcPAZYDTXytdl0bxuNFJ0LC')"></div>
+<div class="absolute top-3 left-3 flex flex-col gap-1.5 items-start">
+<span class="px-2.5 py-1 rounded bg-[#111111]/85 backdrop-blur-sm text-surface-container-lowest font-label-sm text-label-sm font-medium">
+                Venta
+              </span>
+<span class="flex items-center gap-1 px-2.5 py-1 rounded bg-[#111111] text-[#C9A25C] font-label-sm text-label-sm font-semibold tracking-tight shadow-sm">
+<span>★</span> Exclusiva RG
+              </span>
+</div>
+<button aria-label="Guardar en favoritos" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest text-[#111111] flex items-center justify-center shadow-sm hover:scale-110 transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">favorite_border</span>
+</button>
+<div class="absolute bottom-3 left-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#E4F0EB] text-[#2F6B57] font-label-sm text-label-sm font-medium border border-[#2F6B57]/20">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Disponible</span>
+</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between gap-4">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-price-display text-price-display font-bold text-[#111111]">$98.500</span>
+<span class="font-label-sm text-label-sm text-[#6B6560] font-mono">DP-014</span>
+</div>
+<h3 class="font-title-md text-title-md font-semibold text-[#111111] group-hover:text-[#D93A21] transition-colors truncate">
+                Departamento con balcón en Totoracocha
+              </h3>
+<p class="font-body-sm text-body-sm text-[#6B6560] mt-0.5 mb-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Cuenca · Totoracocha</span>
+</p>
+<div class="flex items-center gap-4 py-2 border-y border-[#ECEAE7] text-[#6B6560] font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">bed</span>
+<span>3 hab</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">bathtub</span>
+<span>2 baños</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">square_foot</span>
+<span>92 m²</span>
+</div>
+</div>
+</div>
+<a class="h-10 w-full rounded-lg bg-[#111111] text-surface-container-lowest font-label-md text-label-md font-medium hover:bg-black/85 transition-colors flex items-center justify-center" href="#">
+              Ver detalles
+            </a>
+</div>
+</article>
+<!-- Card 3: Sample 5 -->
+<article class="bg-surface-container-lowest rounded-xl border border-[#ECEAE7] overflow-hidden flex flex-col group hover:shadow-[0_8px_24px_rgba(17,17,17,0.06)] transition-all">
+<div class="relative aspect-[16/10] w-full overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Architectural development rendering of Edificio Mirador in El Batán Cuenca with architectural perimeter concrete grid, floor-to-ceiling dark bronze glazing, and mountain city panoramas." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCI8ql80rBkxcHJOOUThyI2KT0cJWTtmVd9Mb-SqU9A-xNPIvUS9fi43RyD3Uxf6ZeralXYTyscgY-zR5tcLiAdLQAmWoEcKDI1SbQnKkthnVeWLga4IpZzR4ToGRHFmtO7_2a8tUCylCaufV0VzrCz5G4m2PK8usKt1nQF5IdVRUXluTVL6kCd7qFnsCwUWZDKogK8xOtQ_edIVj8fsG256KqhunJHE-ppqkoNPgqG')"></div>
+<div class="absolute top-3 left-3 flex flex-col gap-1.5 items-start">
+<span class="px-2.5 py-1 rounded bg-[#111111]/85 backdrop-blur-sm text-surface-container-lowest font-label-sm text-label-sm font-medium">
+                Venta
+              </span>
+<span class="flex items-center gap-1 px-2.5 py-1 rounded bg-[#111111] text-[#C9A25C] font-label-sm text-label-sm font-semibold tracking-tight shadow-sm">
+<span>★</span> Exclusiva RG
+              </span>
+</div>
+<button aria-label="Guardar en favoritos" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest text-[#111111] flex items-center justify-center shadow-sm hover:scale-110 transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">favorite_border</span>
+</button>
+<div class="absolute bottom-3 left-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#E3EBF4] text-[#3A5F8A] font-label-sm text-label-sm font-medium border border-[#3A5F8A]/20">
+<span class="material-symbols-outlined text-[14px]">construction</span>
+<span>En construcción 60 %</span>
+</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between gap-4">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-price-display text-price-display font-bold text-[#111111]">Desde $89.000</span>
+<span class="font-label-sm text-label-sm text-[#6B6560] font-mono">ED-003</span>
+</div>
+<h3 class="font-title-md text-title-md font-semibold text-[#111111] group-hover:text-[#D93A21] transition-colors truncate">
+                Edificio Mirador
+              </h3>
+<p class="font-body-sm text-body-sm text-[#6B6560] mt-0.5 mb-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Cuenca · El Batán</span>
+</p>
+<div class="flex items-center justify-between py-2 border-y border-[#ECEAE7] text-[#6B6560] font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">apartment</span>
+<span>4 unidades</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">event</span>
+<span>Entrega jun 2027</span>
+</div>
+</div>
+</div>
+<a class="h-10 w-full rounded-lg bg-[#111111] text-surface-container-lowest font-label-md text-label-md font-medium hover:bg-black/85 transition-colors flex items-center justify-center" href="#">
+              Ver detalles
+            </a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- SECTION 4: PROPIEDADES DESTACADAS -->
+<section class="w-full max-w-7xl mx-auto px-gutter py-space-xl">
+<!-- Header with 3px red line -->
+<div class="flex flex-col items-start mb-space-lg">
+<h2 class="font-headline-lg text-headline-lg font-bold text-[#111111] tracking-tight">
+        Propiedades destacadas
+      </h2>
+<div class="w-12 h-[3px] bg-[#D93A21] rounded-full mt-2"></div>
+</div>
+<!-- Grid of 6 Properties (3 cols x 2 rows) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- 1) Casa moderna en Ricaurte -->
+<article class="bg-surface-container-lowest rounded-xl border border-[#ECEAE7] overflow-hidden flex flex-col group hover:shadow-[0_8px_24px_rgba(17,17,17,0.06)] transition-all">
+<div class="relative aspect-[16/10] w-full overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Frontal exterior of modern house in Ricaurte Cuenca showing textured andesite masonry, wide carport, floor glass, and landscaped perimeter garden." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDGuVtN079yj8aY2_Fg53pqBRhahf4jNmJta4XT_heDQFk5YaOQdWKdueZpaiAF2mmmXmc4EY72GgZfPtYfXvhwAZ5hfC3g7RA5CIVegPj-rZLxroMwzygdmsxArA7K6_aI96j7HTHAlyxrZNpFaalTibwqVqhnpnpY6vus4kWsvLMfdUB3qr0pPipx6umMyDw82xP_2Pl9HGYubk4qNCEA2De_aCd9I6CehMO5oUEl')"></div>
+<div class="absolute top-3 left-3 flex flex-col gap-1 items-start">
+<span class="px-2.5 py-1 rounded bg-[#111111]/85 backdrop-blur-sm text-surface-container-lowest font-label-sm text-label-sm font-medium">Venta</span>
+<span class="flex items-center gap-1 px-2.5 py-1 rounded bg-[#111111] text-[#C9A25C] font-label-sm text-label-sm font-semibold tracking-tight shadow-sm">
+<span>★</span> Exclusiva RG
+            </span>
+</div>
+<button aria-label="Favorito" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest text-[#111111] flex items-center justify-center shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">favorite_border</span>
+</button>
+<div class="absolute bottom-3 left-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#E4F0EB] text-[#2F6B57] font-label-sm text-label-sm font-medium border border-[#2F6B57]/20">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Disponible</span>
+</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between gap-4">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-price-display text-price-display font-bold text-[#111111]">$145.000</span>
+<span class="font-label-sm text-label-sm text-[#6B6560] font-mono">CA-001</span>
+</div>
+<h3 class="font-title-md text-title-md font-semibold text-[#111111] group-hover:text-[#D93A21] transition-colors truncate">
+              Casa moderna en Ricaurte
+            </h3>
+<p class="font-body-sm text-body-sm text-[#6B6560] mt-0.5 mb-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Cuenca · Ricaurte</span>
+</p>
+<div class="flex items-center gap-4 py-2 border-y border-[#ECEAE7] text-[#6B6560] font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">bed</span><span>3 hab</span></div>
+<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">bathtub</span><span>2 baños</span></div>
+<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">square_foot</span><span>180 m²</span></div>
+</div>
+</div>
+<a class="h-10 w-full rounded-lg bg-[#111111] text-surface-container-lowest font-label-md text-label-md font-medium hover:bg-black/85 transition-colors flex items-center justify-center" href="#">
+            Ver detalles
+          </a>
+</div>
+</article>
+<!-- 2) Departamento con balcón en Totoracocha -->
+<article class="bg-surface-container-lowest rounded-xl border border-[#ECEAE7] overflow-hidden flex flex-col group hover:shadow-[0_8px_24px_rgba(17,17,17,0.06)] transition-all">
+<div class="relative aspect-[16/10] w-full overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Spacious airy apartment balcony in Cuenca Totoracocha with warm ceramic tiled decking, black iron railings, and serene mountain vistas." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-wECdVpNHG6du7O6BotTck238NMx23q2CylMYCrQwrtgGoLg7guvgFAr5z5_jrGXN3LoAiBzrwJZ3nIidggZUOrUzGrgbqyHM8_1kP1ZOEb--qH9kSLQuhrm2Rr4vij2l6oWerP_yX6o06R-E_YFuSo8x7e_OEky3sGSJBE5Hj164MdihPzqbeswIR1aLdTSyqsiXoT4EnGkmxX0co8WXMIBCcPFs4gB-5EKLuKBs')"></div>
+<div class="absolute top-3 left-3 flex flex-col gap-1 items-start">
+<span class="px-2.5 py-1 rounded bg-[#111111]/85 backdrop-blur-sm text-surface-container-lowest font-label-sm text-label-sm font-medium">Venta</span>
+</div>
+<button aria-label="Favorito" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest text-[#111111] flex items-center justify-center shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">favorite_border</span>
+</button>
+<div class="absolute bottom-3 left-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#E4F0EB] text-[#2F6B57] font-label-sm text-label-sm font-medium border border-[#2F6B57]/20">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Disponible</span>
+</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between gap-4">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-price-display text-price-display font-bold text-[#111111]">$98.500</span>
+<span class="font-label-sm text-label-sm text-[#6B6560] font-mono">DP-014</span>
+</div>
+<h3 class="font-title-md text-title-md font-semibold text-[#111111] group-hover:text-[#D93A21] transition-colors truncate">
+              Departamento con balcón en Totoracocha
+            </h3>
+<p class="font-body-sm text-body-sm text-[#6B6560] mt-0.5 mb-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Cuenca · Totoracocha</span>
+</p>
+<div class="flex items-center gap-4 py-2 border-y border-[#ECEAE7] text-[#6B6560] font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">bed</span><span>3 hab</span></div>
+<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">bathtub</span><span>2 baños</span></div>
+<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">square_foot</span><span>92 m²</span></div>
+</div>
+</div>
+<a class="h-10 w-full rounded-lg bg-[#111111] text-surface-container-lowest font-label-md text-label-md font-medium hover:bg-black/85 transition-colors flex items-center justify-center" href="#">
+            Ver detalles
+          </a>
+</div>
+</article>
+<!-- 3) Suite amoblada en El Centro -->
+<article class="bg-surface-container-lowest rounded-xl border border-[#ECEAE7] overflow-hidden flex flex-col group hover:shadow-[0_8px_24px_rgba(17,17,17,0.06)] transition-all">
+<div class="relative aspect-[16/10] w-full overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Chic historic renovated loft suite in Cuenca Historic Center with exposed adobe brick walls, restored timber ceiling beams, minimalist neutral furnishings, and warm directional lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDQA9TMwMced89jzhn8T5ObgPG4kl9w4YzMMteA7QBB2HV8A1l78Dfoa94EEUdED0Pa828x3om9PIr5M2tISh4RGrjcjaYk2w8EfbWmJGtAAMSKiWR0tLAxY6fYRMDdsaiBezkeW0tv7z-Q1MGffTiFp-s8ogR_6gpm-Aq6Jl9guEey0L-sTu9dl6nkCFVJApi4FiJD1CN7wOnvHkWs-MprAKSxk0J82-GA03B9C1uZ')"></div>
+<div class="absolute top-3 left-3 flex flex-col gap-1 items-start">
+<span class="px-2.5 py-1 rounded bg-[#111111]/85 backdrop-blur-sm text-surface-container-lowest font-label-sm text-label-sm font-medium">Alquiler</span>
+<span class="flex items-center gap-1 px-2.5 py-1 rounded bg-[#111111] text-[#C9A25C] font-label-sm text-label-sm font-semibold tracking-tight shadow-sm">
+<span>★</span> Exclusiva RG
+            </span>
+</div>
+<button aria-label="Favorito" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest text-[#111111] flex items-center justify-center shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">favorite_border</span>
+</button>
+<div class="absolute bottom-3 left-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#E4F0EB] text-[#2F6B57] font-label-sm text-label-sm font-medium border border-[#2F6B57]/20">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Disponible</span>
+</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between gap-4">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-price-display text-price-display font-bold text-[#111111]">$450 <span class="font-body-sm text-body-sm font-normal text-[#6B6560]">/ mes</span></span>
+<span class="font-label-sm text-label-sm text-[#6B6560] font-mono">AL-088</span>
+</div>
+<h3 class="font-title-md text-title-md font-semibold text-[#111111] group-hover:text-[#D93A21] transition-colors truncate">
+              Suite amoblada en El Centro
+            </h3>
+<p class="font-body-sm text-body-sm text-[#6B6560] mt-0.5 mb-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Cuenca · El Centro Histórico</span>
+</p>
+<div class="flex items-center gap-4 py-2 border-y border-[#ECEAE7] text-[#6B6560] font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">bed</span><span>1 hab</span></div>
+<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">bathtub</span><span>1 baño</span></div>
+<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">square_foot</span><span>48 m²</span></div>
+</div>
+</div>
+<a class="h-10 w-full rounded-lg bg-[#111111] text-surface-container-lowest font-label-md text-label-md font-medium hover:bg-black/85 transition-colors flex items-center justify-center" href="#">
+            Ver detalles
+          </a>
+</div>
+</article>
+<!-- 4) Terreno con vista en Turi -->
+<article class="bg-surface-container-lowest rounded-xl border border-[#ECEAE7] overflow-hidden flex flex-col group hover:shadow-[0_8px_24px_rgba(17,17,17,0.06)] transition-all">
+<div class="relative aspect-[16/10] w-full overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Expansive sloping green parcel of development land in Turi Cuenca with panoramic vista overlooking Cuenca historic red-tile city domes and lush valley greenery under blue sky." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCBBGrJZNsSwgLQTV1MtFvL70MvxsnXUn0LYiK-w-vSvNf3lrRyyyBbja9u3RxgJj7AhbSAmKILPLlfXnT0HVuofykNYtudHf01JtM8iJ2seGf4YrbBy3QhTvyqr9r_vtEaMoejiHpZNgEipjZE1k4QUmI4bv1vLE120n0lYvrMXr668zW2Xk83hd1OX98Wj0TxZLfuOM8jnxvFCBI7hOUy4SZG7pR4c6OBtwhMnEdp')"></div>
+<div class="absolute top-3 left-3 flex flex-col gap-1 items-start">
+<span class="px-2.5 py-1 rounded bg-[#111111]/85 backdrop-blur-sm text-surface-container-lowest font-label-sm text-label-sm font-medium">Venta</span>
+</div>
+<button aria-label="Favorito" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest text-[#111111] flex items-center justify-center shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">favorite_border</span>
+</button>
+<div class="absolute bottom-3 left-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#E4F0EB] text-[#2F6B57] font-label-sm text-label-sm font-medium border border-[#2F6B57]/20">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Disponible</span>
+</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between gap-4">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-price-display text-price-display font-bold text-[#111111]">$62.000</span>
+<span class="font-label-sm text-label-sm text-[#6B6560] font-mono">TR-009</span>
+</div>
+<h3 class="font-title-md text-title-md font-semibold text-[#111111] group-hover:text-[#D93A21] transition-colors truncate">
+              Terreno con vista en Turi
+            </h3>
+<p class="font-body-sm text-body-sm text-[#6B6560] mt-0.5 mb-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Cuenca · Turi</span>
+</p>
+<div class="flex items-center gap-4 py-2 border-y border-[#ECEAE7] text-[#6B6560] font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">terrain</span><span>Terreno</span></div>
+<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">square_foot</span><span>400 m²</span></div>
+</div>
+</div>
+<a class="h-10 w-full rounded-lg bg-[#111111] text-surface-container-lowest font-label-md text-label-md font-medium hover:bg-black/85 transition-colors flex items-center justify-center" href="#">
+            Ver detalles
+          </a>
+</div>
+</article>
+<!-- 5) Edificio Mirador -->
+<article class="bg-surface-container-lowest rounded-xl border border-[#ECEAE7] overflow-hidden flex flex-col group hover:shadow-[0_8px_24px_rgba(17,17,17,0.06)] transition-all">
+<div class="relative aspect-[16/10] w-full overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="High quality architectural exterior perspective of a boutique apartment building under construction in Cuenca El Batán, crisp geometry with glass facade and concrete framework." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDerN2iJyEt3UcBDkK_qqiitS_Nrl50eTXx-uBvXjrUAxVmhyZukwz8OBHjHuPnaRN9M4bW-HN43CFTqnE4KXbV76PZ4diVnf956HrTga4tqMfh8eajwI7T_s-olmXqJFIzXaxWKvCmwpjrxyLqFpoUwonFb55pBRI5YNLBL5W3ZynWqwqMpeI3koev9aakdv7cPAvngs2iFlSUQwPNNPbXKgcVkrkomALt-AKYt1wj')"></div>
+<div class="absolute top-3 left-3 flex flex-col gap-1 items-start">
+<span class="px-2.5 py-1 rounded bg-[#111111]/85 backdrop-blur-sm text-surface-container-lowest font-label-sm text-label-sm font-medium">Venta</span>
+</div>
+<button aria-label="Favorito" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest text-[#111111] flex items-center justify-center shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">favorite_border</span>
+</button>
+<div class="absolute bottom-3 left-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#E3EBF4] text-[#3A5F8A] font-label-sm text-label-sm font-medium border border-[#3A5F8A]/20">
+<span class="material-symbols-outlined text-[14px]">construction</span>
+<span>En construcción 60 %</span>
+</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between gap-4">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-price-display text-price-display font-bold text-[#111111]">Desde $89.000</span>
+<span class="font-label-sm text-label-sm text-[#6B6560] font-mono">ED-003</span>
+</div>
+<h3 class="font-title-md text-title-md font-semibold text-[#111111] group-hover:text-[#D93A21] transition-colors truncate">
+              Edificio Mirador
+            </h3>
+<p class="font-body-sm text-body-sm text-[#6B6560] mt-0.5 mb-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Cuenca · El Batán</span>
+</p>
+<div class="flex items-center justify-between py-2 border-y border-[#ECEAE7] text-[#6B6560] font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">apartment</span><span>4 unidades</span></div>
+<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">foundation</span><span>Etapa gris</span></div>
+</div>
+</div>
+<a class="h-10 w-full rounded-lg bg-[#111111] text-surface-container-lowest font-label-md text-label-md font-medium hover:bg-black/85 transition-colors flex items-center justify-center" href="#">
+            Ver detalles
+          </a>
+</div>
+</article>
+<!-- 6) Casa VIS en Machángara -->
+<article class="bg-surface-container-lowest rounded-xl border border-[#ECEAE7] overflow-hidden flex flex-col group hover:shadow-[0_8px_24px_rgba(17,17,17,0.06)] transition-all">
+<div class="relative aspect-[16/10] w-full overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Neat two-story contemporary suburban family home in Cuenca Machangara with warm off-white stucco facade, charcoal slate roof shingles, and modest paved front garden." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCchTdcbwhRIIdDH1nuooSi94JX3iSRYEHzLQC-TjDAeZZdzgYLtJ4brsRCkfhiHnsoPkCB3AN9PONlLl1C6kRhTl20SWLKAqQmpEocBKYYkdaB9g2Ks_-scPk2RfJQTsE3ig_cfg0Jm1t630g81jXRZ-qi7n8S4VU-GC1QaWmCxlmtB4YBGE7Om9o-l5bPtF6dxk4QFs8-fXGr3Zx8xhoFnUm2UmBw8oP4RrPTotDp')"></div>
+<div class="absolute top-3 left-3 flex flex-col gap-1 items-start">
+<span class="px-2.5 py-1 rounded bg-[#111111]/85 backdrop-blur-sm text-surface-container-lowest font-label-sm text-label-sm font-medium">Venta</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-[#111111] font-label-sm text-label-sm font-semibold border border-[#ECEAE7] shadow-sm">
+              Vivienda VIS
+            </span>
+</div>
+<button aria-label="Favorito" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest text-[#111111] flex items-center justify-center shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">favorite_border</span>
+</button>
+<div class="absolute bottom-3 left-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#E4F0EB] text-[#2F6B57] font-label-sm text-label-sm font-medium border border-[#2F6B57]/20">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Disponible</span>
+</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between gap-4">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-price-display text-price-display font-bold text-[#111111]">$68.000</span>
+<span class="font-label-sm text-label-sm text-[#6B6560] font-mono">VS-004</span>
+</div>
+<h3 class="font-title-md text-title-md font-semibold text-[#111111] group-hover:text-[#D93A21] transition-colors truncate">
+              Casa VIS en Machángara
+            </h3>
+<p class="font-body-sm text-body-sm text-[#6B6560] mt-0.5 mb-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Cuenca · Machángara</span>
+</p>
+<div class="flex items-center gap-4 py-2 border-y border-[#ECEAE7] text-[#6B6560] font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">bed</span><span>3 hab</span></div>
+<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">bathtub</span><span>1 baño</span></div>
+<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">square_foot</span><span>85 m²</span></div>
+</div>
+</div>
+<a class="h-10 w-full rounded-lg bg-[#111111] text-surface-container-lowest font-label-md text-label-md font-medium hover:bg-black/85 transition-colors flex items-center justify-center" href="#">
+            Ver detalles
+          </a>
+</div>
+</article>
+</div>
+<!-- Below Grid: Outline Black CTA Button -->
+<div class="mt-space-xl flex justify-center">
+<a class="inline-flex items-center justify-center px-8 py-3.5 rounded-lg border-2 border-[#111111] text-[#111111] font-label-md text-label-md font-semibold hover:bg-[#111111] hover:text-surface-container-lowest transition-all" href="#">
+        Ver todas las propiedades
+      </a>
+</div>
+</section>
+<!-- Interactive script for Hero and Carousel -->
+<script>
+    function setQuery(text) {
+      const textarea = document.getElementById('ai-search-input');
+      if (textarea) {
+        textarea.value = text;
+        textarea.focus();
+      }
+    }
+
+    // Segmented tab switches
+    const tabComprar = document.getElementById('tab-comprar');
+    const tabAlquilar = document.getElementById('tab-alquilar');
+
+    if (tabComprar && tabAlquilar) {
+      tabComprar.addEventListener('click', () => {
+        tabComprar.className = "h-10 px-6 rounded-lg bg-[#111111] text-surface-container-lowest font-label-md text-label-md font-semibold transition-all";
+        tabAlquilar.className = "h-10 px-6 rounded-lg bg-transparent text-[#6B6560] hover:bg-[#F5F3F1] font-label-md text-label-md font-medium transition-all";
+      });
+
+      tabAlquilar.addEventListener('click', () => {
+        tabAlquilar.className = "h-10 px-6 rounded-lg bg-[#111111] text-surface-container-lowest font-label-md text-label-md font-semibold transition-all";
+        tabComprar.className = "h-10 px-6 rounded-lg bg-transparent text-[#6B6560] hover:bg-[#F5F3F1] font-label-md text-label-md font-medium transition-all";
+      });
+    }
+
+    // Carousel functional logic
+    let currentSlide = 0;
+    const totalSlides = 3;
+
+    function updateCarousel() {
+      for (let i = 0; i < totalSlides; i++) {
+        const slide = document.getElementById(`carousel-slide-${i}`);
+        const dot = document.getElementById(`dot-${i}`);
+        if (!slide || !dot) continue;
+
+        if (i === currentSlide) {
+          slide.classList.remove('opacity-0', 'pointer-events-none', 'z-0');
+          slide.classList.add('opacity-100', 'z-10');
+          dot.className = "w-7 h-2 rounded-full bg-[#111111] transition-all";
+        } else {
+          slide.classList.remove('opacity-100', 'z-10');
+          slide.classList.add('opacity-0', 'pointer-events-none', 'z-0');
+          dot.className = "w-2.5 h-2 rounded-full bg-[#cdc5bf] hover:bg-[#635d58] transition-all";
+        }
+      }
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateCarousel();
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+  </script>
+</div></main><footer class="w-full bg-primary text-on-primary"><div class="max-w-7xl mx-auto px-gutter py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-full bg-surface-container-lowest text-primary flex items-center justify-center font-headline-sm text-headline-sm font-bold tracking-tight">RG</div><span class="font-title-md text-title-md text-on-primary tracking-tight">Inmobiliaria Constructora</span></div><p class="font-body-md text-body-md text-primary-fixed-dim max-w-sm">Venta y alquiler de propiedades exclusivas y proyectos de construcción en Ecuador y Miami.</p><div class="flex flex-col gap-space-xs pt-space-xs font-body-sm text-body-sm text-primary-fixed-dim"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-on-primary">call</span><span>+593 7 284 0000</span></div><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-on-primary">mail</span><span>info@rginmobiliaria.ec</span></div><div class="flex items-center gap-space-md pt-space-sm"><a class="font-label-sm text-label-sm text-primary-fixed-dim hover:text-on-primary transition-colors uppercase tracking-wider" href="https://facebook.com" rel="noopener" target="_blank">Facebook</a><a class="font-label-sm text-label-sm text-primary-fixed-dim hover:text-on-primary transition-colors uppercase tracking-wider" href="https://instagram.com" rel="noopener" target="_blank">Instagram</a><a class="font-label-sm text-label-sm text-primary-fixed-dim hover:text-on-primary transition-colors uppercase tracking-wider" href="https://linkedin.com" rel="noopener" target="_blank">LinkedIn</a></div></div></div><div class="flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-on-primary tracking-tight border-b border-primary-container pb-space-xs">Propiedades</span><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-primary-fixed-dim"><li><a class="hover:text-on-primary transition-colors" data-path="comprar" href="#">Casas en Cuenca</a></li><li><a class="hover:text-on-primary transition-colors" data-path="departamentos" href="#">Departamentos</a></li><li><a class="hover:text-on-primary transition-colors" data-path="terrenos" href="#">Terrenos</a></li><li><a class="hover:text-on-primary transition-colors" data-path="proyectos-en-planos" href="#">Proyectos sobre planos</a></li><li><a class="hover:text-on-primary transition-colors" data-path="exclusivas-rg" href="#">Exclusivas RG</a></li></ul></div><div class="flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-on-primary tracking-tight border-b border-primary-container pb-space-xs">Empresa</span><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-primary-fixed-dim"><li><a class="hover:text-on-primary transition-colors" data-path="quienes-somos" href="#">Quiénes somos</a></li><li><a class="hover:text-on-primary transition-colors" data-path="servicios" href="#">Servicios</a></li><li><a class="hover:text-on-primary transition-colors" data-path="blog" href="#">Blog</a></li><li><a class="hover:text-on-primary transition-colors" data-path="contacto" href="#">Contacto</a></li></ul></div><div class="flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-on-primary tracking-tight border-b border-primary-container pb-space-xs">Legal</span><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-primary-fixed-dim"><li><a class="hover:text-on-primary transition-colors" data-path="politica-de-privacidad" href="#">Política de privacidad</a></li><li><a class="hover:text-on-primary transition-colors" data-path="terminos-y-condiciones" href="#">Términos y condiciones</a></li><li><a class="hover:text-on-primary transition-colors" data-path="transparencia" href="#">Transparencia</a></li></ul></div></div><div class="mt-space-xl pt-space-md border-t border-primary-container flex flex-col md:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-primary-fixed-dim"><span>© 2025 RG Inmobiliaria y Constructora. Todos los derechos reservados.</span><div class="flex items-center gap-space-md"><a class="hover:text-on-primary transition-colors" data-path="politica-de-privacidad" href="#">Política de privacidad</a><span class="text-primary-container">•</span><a class="hover:text-on-primary transition-colors" data-path="terminos-y-condiciones" href="#">Términos</a></div></div></div></footer></body></html>

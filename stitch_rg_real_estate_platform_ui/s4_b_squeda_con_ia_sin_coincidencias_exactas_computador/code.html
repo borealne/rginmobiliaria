@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-container": "#858383", "tertiary": "#000000", "on-tertiary-container": "#ed482e", "on-tertiary-fixed": "#3f0300", "surface-dim": "#dbdad7", "surface-tint": "#5f5e5e", "surface-container-high": "#eae8e5", "on-surface": "#1b1c1a", "on-background": "#1b1c1a", "secondary-fixed-dim": "#cdc5bf", "inverse-primary": "#c8c6c5", "secondary-container": "#eae1da", "error-container": "#ffdad6", "outline": "#747878", "inverse-surface": "#30312f", "on-primary": "#ffffff", "inverse-on-surface": "#f2f0ed", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#ffdad3", "primary-fixed-dim": "#c8c6c5", "tertiary-fixed-dim": "#ffb4a6", "primary-container": "#1c1b1b", "on-secondary-fixed": "#1f1b17", "surface": "#fbf9f6", "on-surface-variant": "#444748", "secondary": "#635d58", "surface-bright": "#fbf9f6", "surface-container": "#f0edea", "on-error": "#ffffff", "error": "#ba1a1a", "background": "#fbf9f6", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#4b4641", "surface-variant": "#e4e2df", "on-secondary": "#ffffff", "secondary-fixed": "#eae1da", "primary": "#000000", "surface-container-highest": "#e4e2df", "on-primary-fixed-variant": "#474646", "on-primary-fixed": "#1c1b1b", "on-tertiary-fixed-variant": "#8f1000", "on-secondary-container": "#69635e", "on-tertiary": "#ffffff", "outline-variant": "#c4c7c7", "primary-fixed": "#e5e2e1", "tertiary-container": "#3f0300", "surface-container-low": "#f5f3f0" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "gutter-mobile": "1rem", "margin": "3rem", "space-sm": "0.5rem", "margin-tablet": "2rem", "gutter": "1.5rem", "space-xl": "2.5rem", "margin-mobile": "1.25rem", "space-md": "1rem", "space-xs": "0.25rem" }, "fontFamily": { "headline-lg-mobile": ["Montserrat"], "label-md": ["Inter"], "display-xl-mobile": ["Montserrat"], "price-display": ["Montserrat"], "body-sm": ["Inter"], "headline-lg": ["Montserrat"], "headline-md": ["Montserrat"], "title-md": ["Montserrat"], "body-md": ["Inter"], "body-lg": ["Inter"], "label-sm": ["Inter"], "display-xl": ["Montserrat"], "headline-sm": ["Montserrat"] }, "fontSize": { "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "display-xl-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "price-display": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "display-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest border-b border-surface-variant"><div class="h-20 max-w-7xl mx-auto px-gutter flex items-center justify-between gap-space-md"><a class="flex items-center gap-space-sm flex-shrink-0 group" data-path="inicio" href="#"><div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-headline-sm text-headline-sm font-bold tracking-tight">RG</div><div class="flex flex-col"><span class="font-title-md text-title-md text-on-surface tracking-tight leading-tight">Inmobiliaria Constructora</span><span class="font-label-sm text-label-sm text-on-surface-variant">Cuenca • Miami</span></div></a><nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-primary font-title-md border-b-2 border-primary"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="comprar" href="#">Comprar</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="alquilar" href="#">Alquilar</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="zonas" href="#">Zonas</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="servicios" href="#">Servicios</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="blog" href="#">Blog</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="quienes-somos" href="#">Quiénes somos</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="contacto" href="#">Contacto</a></nav><div class="flex items-center gap-space-md flex-shrink-0"><div class="flex items-center gap-space-xs pr-space-md border-r border-surface-variant"><button class="font-label-md text-label-md text-primary font-bold px-1" type="button">ES</button><span class="text-outline-variant font-label-sm text-label-sm">|</span><button class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-1 transition-colors" type="button">EN</button></div><a class="h-12 px-space-lg rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center hover:bg-primary-container transition-colors shadow-[0_1px_8px_rgba(0,0,0,0.04)]" data-path="agendar-cita" href="#">Agendar una visita</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface flex-grow"><div class="flex flex-col w-full">
+<!-- Top Section: Background container for Search & Contextual Feedback -->
+<section class="w-full bg-surface py-space-lg">
+<div class="max-w-[1000px] mx-auto px-gutter-mobile md:px-gutter">
+<!-- Architectural Search Panel -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm">
+<!-- Row 1: Segmented operation tabs -->
+<div class="flex items-center gap-space-xs pb-space-md">
+<button class="h-10 px-space-lg rounded-lg bg-primary text-on-primary font-label-md text-label-md transition-colors flex items-center justify-center" type="button">
+            Comprar
+          </button>
+<button class="h-10 px-space-lg rounded-lg bg-transparent text-secondary hover:text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center" type="button">
+            Alquilar
+          </button>
+</div>
+<!-- Row 2: Search mode selector -->
+<div class="flex items-center gap-space-sm pb-space-sm">
+<div class="inline-flex p-1 bg-surface-container rounded-lg">
+<button class="h-9 px-space-md rounded bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm flex items-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+<span>Buscar con IA</span>
+</button>
+<button class="h-9 px-space-md rounded text-secondary hover:text-on-surface font-label-md text-label-md flex items-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Usar filtros</span>
+</button>
+</div>
+</div>
+<!-- Row 3: Multiline Input & Execution Button -->
+<div class="relative flex flex-col md:flex-row items-stretch gap-space-sm pt-space-xs">
+<div class="relative flex-grow">
+<textarea class="w-full bg-surface-container-lowest text-on-surface font-body-md text-body-md p-space-sm md:p-space-md rounded-lg focus:outline-none focus:bg-surface-container-low transition-all resize-none shadow-[inset_0_0_0_1px_rgba(28,27,27,0.15)] focus:shadow-[inset_0_0_0_1.5px_#000000]" placeholder="Describe lo que buscas con lenguaje natural..." rows="2">Departamento de 3 habitaciones en Ricaurte hasta $120.000</textarea>
+</div>
+<button class="h-12 md:h-auto md:w-36 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center gap-space-xs flex-shrink-0 transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">search</span>
+<span>Buscar</span>
+</button>
+</div>
+<!-- Row 4: AI Parsed Criteria / Removable Chips -->
+<div class="pt-space-md flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center justify-between gap-y-space-sm gap-x-space-md">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mr-space-xs">Entendí esto:</span>
+<!-- Chip 1 -->
+<div class="inline-flex items-center gap-space-xs h-9 px-3 rounded-full bg-surface-container-high text-on-surface font-body-sm text-body-sm">
+<span>Departamento</span>
+<button aria-label="Quitar Departamento" class="w-6 h-6 flex items-center justify-center rounded-full hover:bg-surface-dim transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">close</span>
+</button>
+</div>
+<!-- Chip 2 -->
+<div class="inline-flex items-center gap-space-xs h-9 px-3 rounded-full bg-surface-container-high text-on-surface font-body-sm text-body-sm">
+<span>3 habitaciones</span>
+<button aria-label="Quitar 3 habitaciones" class="w-6 h-6 flex items-center justify-center rounded-full hover:bg-surface-dim transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">close</span>
+</button>
+</div>
+<!-- Chip 3 -->
+<div class="inline-flex items-center gap-space-xs h-9 px-3 rounded-full bg-surface-container-high text-on-surface font-body-sm text-body-sm">
+<span>Hasta $120.000</span>
+<button aria-label="Quitar presupuesto" class="w-6 h-6 flex items-center justify-center rounded-full hover:bg-surface-dim transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">close</span>
+</button>
+</div>
+<!-- Chip 4 -->
+<div class="inline-flex items-center gap-space-xs h-9 px-3 rounded-full bg-surface-container-high text-on-surface font-body-sm text-body-sm">
+<span>Ricaurte</span>
+<button aria-label="Quitar Ricaurte" class="w-6 h-6 flex items-center justify-center rounded-full hover:bg-surface-dim transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">close</span>
+</button>
+</div>
+<!-- Chip 5 -->
+<div class="inline-flex items-center gap-space-xs h-9 px-3 rounded-full bg-surface-container-high text-on-surface font-body-sm text-body-sm">
+<span>Comprar</span>
+<button aria-label="Quitar Comprar" class="w-6 h-6 flex items-center justify-center rounded-full hover:bg-surface-dim transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">close</span>
+</button>
+</div>
+</div>
+<!-- Action Link -->
+<button class="inline-flex items-center gap-space-xs text-primary font-label-md text-label-md hover:underline py-1" type="button">
+<span class="material-symbols-outlined text-[18px]">filter_alt</span>
+<span>Ajustar con filtros</span>
+</button>
+</div>
+<!-- Microcopy guidance -->
+<p class="font-body-sm text-body-sm text-secondary pt-1">
+            Si algo no es lo que querías, quita un criterio o ajusta con filtros.
+          </p>
+</div>
+</div>
+<!-- Soft Notice Box: Relaxation Notice -->
+<div class="my-space-md p-space-md bg-surface-container-low rounded-r-xl relative overflow-hidden shadow-sm flex items-start gap-space-md" style="box-shadow: inset 4px 0 0 0 #000000;">
+<div class="flex-shrink-0 pt-0.5">
+<span class="material-symbols-outlined text-primary text-[24px]">info</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">
+            No encontramos propiedades con todos esos criterios.
+          </h2>
+<p class="font-body-md text-body-md text-secondary">
+            Te mostramos parecidas. Cambiamos: <span class="text-on-surface font-medium">la zona (parroquias vecinas)</span> y el <span class="text-on-surface font-medium">precio hasta $130.000</span>.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content Grid Area -->
+<section class="w-full bg-surface-container-low py-space-xl">
+<div class="max-w-7xl mx-auto px-gutter-mobile md:px-gutter">
+<!-- Results Metabar -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md pb-space-lg">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface tracking-tight">
+            3 propiedades parecidas
+          </h3>
+<div class="w-12 h-[3px] bg-[#D93A21] mt-1.5"></div>
+</div>
+<div class="flex items-center gap-space-md">
+<!-- Sort Dropdown -->
+<div class="relative inline-flex items-center">
+<label class="sr-only" for="sort-select">Ordenar por</label>
+<div class="flex items-center bg-surface-container-lowest rounded-lg px-space-md py-2.5 shadow-sm text-on-surface font-label-md text-label-md gap-space-xs cursor-pointer">
+<span class="text-secondary font-normal">Ordenar:</span>
+<span class="font-semibold">Más recientes</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">expand_more</span>
+</div>
+</div>
+<!-- View Mode Toggle -->
+<div class="inline-flex p-1 bg-surface-container-highest rounded-lg">
+<button class="h-9 px-space-md rounded bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">format_list_bulleted</span>
+<span>Lista</span>
+</button>
+<button class="h-9 px-space-md rounded text-secondary hover:text-on-surface font-label-md text-label-md flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">map</span>
+<span>Mapa</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Properties Grid: 3 Responsive Columns -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<!-- CARD 1: Totoracocha -->
+<article class="flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group">
+<!-- Image container 16:10 -->
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Modern Ecuadorian apartment building in Cuenca with warm brick elements, private concrete cantilevered balcony, large floor-to-ceiling glass windows, sunny daytime lighting, crisp clean lines, architectural monograph style, warm neutral tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0fCaK8YrYXLVT6ym45jIpJyicWpNF_t2gZFhyKJH8IYA2JhKxUC76dVTQfTDUAKC_gQp2AEIfgVQ2brfhVzSFVaAeIVsIKiR8FczfxvvksOE2LTi9cGybncV3zyl_1gx2NlRMQfava8XCKugEpB6-Rb8nxxpYHESppYjLBPyWvrO465wfvusbp1qI36pdvSNTZFcQDhqnag7A2gPHi7aNIZlIHMVJzbOvAbLzmpyD"/>
+<!-- Top Badges Overlay -->
+<div class="absolute top-3 left-3 flex flex-wrap items-center gap-1.5 z-10">
+<span class="px-2.5 py-1 rounded-full bg-primary/90 text-on-primary font-label-sm text-label-sm backdrop-blur-sm">
+                Venta
+              </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/95 text-on-surface font-label-sm text-label-sm shadow-sm">
+                Parecida
+              </span>
+</div>
+<!-- Favorite Action -->
+<button aria-label="Guardar en favoritos" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest/90 hover:bg-surface-container-lowest text-on-surface flex items-center justify-center transition-colors shadow-sm z-10" type="button">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<!-- Bottom Left Status Badge -->
+<div class="absolute bottom-3 left-3 z-10">
+<span class="px-2.5 py-1 rounded font-label-sm text-label-sm bg-[#E4F0EB] text-[#2F6B57] font-semibold">
+                Disponible
+              </span>
+</div>
+</div>
+<!-- Card Body -->
+<div class="p-space-md flex flex-col flex-grow justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-baseline justify-between">
+<span class="font-price-display text-price-display text-on-surface">$98.500</span>
+<span class="font-label-sm text-label-sm text-secondary">Cód. DP-014</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1">
+                Departamento con balcón en Totoracocha
+              </h4>
+<p class="font-body-md text-body-md text-secondary">
+                Cuenca · Totoracocha
+              </p>
+</div>
+<!-- What changed notice -->
+<div class="py-1.5 px-2.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-primary">alt_route</span>
+<span>Cambio: Zona cercana (en vez de Ricaurte)</span>
+</div>
+<!-- Architectural Specs Row -->
+<div class="grid grid-cols-3 gap-2 py-space-xs bg-surface-container-low rounded-lg text-center">
+<div class="flex flex-col items-center py-1">
+<div class="flex items-center gap-1 text-on-surface font-title-md text-title-md">
+<span class="material-symbols-outlined text-[18px] text-secondary">bed</span>
+<span>3</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Hab.</span>
+</div>
+<div class="flex flex-col items-center py-1">
+<div class="flex items-center gap-1 text-on-surface font-title-md text-title-md">
+<span class="material-symbols-outlined text-[18px] text-secondary">shower</span>
+<span>2</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Baños</span>
+</div>
+<div class="flex flex-col items-center py-1">
+<div class="flex items-center gap-1 text-on-surface font-title-md text-title-md">
+<span class="material-symbols-outlined text-[18px] text-secondary">square_foot</span>
+<span>92</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">m² tot.</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary line-clamp-2">
+              Unidad exterior con generosa iluminación natural, balcón privado al frente, acabados en porcelanato y cocina tipo americana lista para habitar.
+            </p>
+<a class="w-full h-11 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center transition-colors shadow-sm" href="#">
+              Ver detalles
+            </a>
+</div>
+</article>
+<!-- CARD 2: San Sebastián -->
+<article class="flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group">
+<!-- Image container 16:10 -->
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Sophisticated riverside luxury apartment living room in San Sebastian Cuenca, panoramic view over the Tomebamba river with willow trees, minimalist furniture in charcoal and ivory, soft natural morning ambient light, high-end editorial architectural photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPcCevtiUm4mRMD94whZunuJaPtkEKA9u1Tqw67NKJvjSPcKHBM2G29e4ol1lxUch6RJuBg8uUuMi0CD4-4NhKHGZ-dYOxIK_UkdClKvnUkIMTnq1NDbM9hjiuWDvMc_ePVrwMzDgsAWgqK5VeJZNghB_TRV5zx84cwqEDs2qO3MycwrMkbqtdRW9AprpzSQwq2fbptoRENnwjkCy5lEEdvtooyoLw-AiPnlHeDWfi"/>
+<!-- Top Badges Overlay -->
+<div class="absolute top-3 left-3 flex flex-wrap items-center gap-1.5 z-10">
+<span class="px-2.5 py-1 rounded-full bg-primary/90 text-on-primary font-label-sm text-label-sm backdrop-blur-sm">
+                Venta
+              </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/95 text-on-surface font-label-sm text-label-sm shadow-sm">
+                Parecida
+              </span>
+<span class="px-2.5 py-1 rounded-full bg-primary text-[#C9A25C] font-label-sm text-label-sm font-semibold tracking-wide flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">stars</span>
+<span>Exclusiva RG</span>
+</span>
+</div>
+<!-- Favorite Action -->
+<button aria-label="Guardar en favoritos" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest/90 hover:bg-surface-container-lowest text-on-surface flex items-center justify-center transition-colors shadow-sm z-10" type="button">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<!-- Bottom Left Status Badge -->
+<div class="absolute bottom-3 left-3 z-10">
+<span class="px-2.5 py-1 rounded font-label-sm text-label-sm bg-[#E4F0EB] text-[#2F6B57] font-semibold">
+                Disponible
+              </span>
+</div>
+</div>
+<!-- Card Body -->
+<div class="p-space-md flex flex-col flex-grow justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-baseline justify-between">
+<span class="font-price-display text-price-display text-on-surface">$128.000</span>
+<span class="font-label-sm text-label-sm text-secondary">Cód. DP-008</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1">
+                Departamento con vista al río en San Sebastián
+              </h4>
+<p class="font-body-md text-body-md text-secondary">
+                Cuenca · San Sebastián
+              </p>
+</div>
+<!-- What changed notice -->
+<div class="py-1.5 px-2.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-primary">alt_route</span>
+<span>Cambio: Precio ($128.000) y Zona</span>
+</div>
+<!-- Architectural Specs Row -->
+<div class="grid grid-cols-3 gap-2 py-space-xs bg-surface-container-low rounded-lg text-center">
+<div class="flex flex-col items-center py-1">
+<div class="flex items-center gap-1 text-on-surface font-title-md text-title-md">
+<span class="material-symbols-outlined text-[18px] text-secondary">bed</span>
+<span>3</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Hab.</span>
+</div>
+<div class="flex flex-col items-center py-1">
+<div class="flex items-center gap-1 text-on-surface font-title-md text-title-md">
+<span class="material-symbols-outlined text-[18px] text-secondary">shower</span>
+<span>2</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Baños</span>
+</div>
+<div class="flex flex-col items-center py-1">
+<div class="flex items-center gap-1 text-on-surface font-title-md text-title-md">
+<span class="material-symbols-outlined text-[18px] text-secondary">square_foot</span>
+<span>118</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">m² tot.</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary line-clamp-2">
+              Ubicación privilegiada en edificio residencial frente al río Tomebamba. Amplia suite principal, acabados en madera nativa tratada y dos parqueaderos.
+            </p>
+<a class="w-full h-11 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center transition-colors shadow-sm" href="#">
+              Ver detalles
+            </a>
+</div>
+</article>
+<!-- CARD 3: Tarqui -->
+<article class="flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group">
+<!-- Image container 16:10 -->
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Architectural 3D render of a contemporary residential condo development in Tarqui Cuenca, surrounded by green Andean slopes, glass balconies, exposed aggregate concrete and dark steel beams, warm late afternoon sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyIUADbCc046AkrZgJKz_ax8PTUvOp48HouoUyGeacE9Z31Et0xwHKJDcwIC8qldy4ZxkszyuoYDSfzjw0hlaLnRYeSMB2GvGeq6e0uztqrH1gj306_tsnkDecajmV6d8-jlm6cQPonlJHQwnTkl2ief-eNa0H1xU_Qs_7RKqwMw_8Y-sPSrCsP8ncMRreju8ifUa9q20xxki9gtnQZ0g3JRLDNHXLNfwAZ89kPPso"/>
+<!-- Top Badges Overlay -->
+<div class="absolute top-3 left-3 flex flex-wrap items-center gap-1.5 z-10">
+<span class="px-2.5 py-1 rounded-full bg-primary/90 text-on-primary font-label-sm text-label-sm backdrop-blur-sm">
+                Venta
+              </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/95 text-on-surface font-label-sm text-label-sm shadow-sm">
+                Parecida
+              </span>
+</div>
+<!-- Favorite Action -->
+<button aria-label="Guardar en favoritos" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest/90 hover:bg-surface-container-lowest text-on-surface flex items-center justify-center transition-colors shadow-sm z-10" type="button">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<!-- Bottom Left Status Badge: Blueprint / Preconstruction -->
+<div class="absolute bottom-3 left-3 z-10">
+<span class="px-2.5 py-1 rounded font-label-sm text-label-sm bg-[#E3EBF4] text-[#3A5F8A] font-semibold">
+                Sobre planos 15 %
+              </span>
+</div>
+</div>
+<!-- Card Body -->
+<div class="p-space-md flex flex-col flex-grow justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-baseline justify-between">
+<span class="font-price-display text-price-display text-on-surface">$94.000</span>
+<span class="font-label-sm text-label-sm text-secondary">Cód. DP-031</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors line-clamp-1">
+                Departamento sobre planos en Tarqui
+              </h4>
+<p class="font-body-md text-body-md text-secondary">
+                Cuenca · Tarqui
+              </p>
+</div>
+<!-- What changed notice -->
+<div class="py-1.5 px-2.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-primary">alt_route</span>
+<span>Cambio: Zona y 2 hab. (en vez de 3)</span>
+</div>
+<!-- Architectural Specs Row -->
+<div class="grid grid-cols-3 gap-2 py-space-xs bg-surface-container-low rounded-lg text-center">
+<div class="flex flex-col items-center py-1">
+<div class="flex items-center gap-1 text-on-surface font-title-md text-title-md">
+<span class="material-symbols-outlined text-[18px] text-secondary">bed</span>
+<span>2</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Hab.</span>
+</div>
+<div class="flex flex-col items-center py-1">
+<div class="flex items-center gap-1 text-on-surface font-title-md text-title-md">
+<span class="material-symbols-outlined text-[18px] text-secondary">shower</span>
+<span>2</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Baños</span>
+</div>
+<div class="flex flex-col items-center py-1">
+<div class="flex items-center gap-1 text-on-surface font-title-md text-title-md">
+<span class="material-symbols-outlined text-[18px] text-secondary">square_foot</span>
+<span>84</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">m² tot.</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary line-clamp-2">
+              Excelente oportunidad de inversión con planes de financiamiento directo durante la construcción. Alta plusvalía en sector campestre en expansión.
+            </p>
+<a class="w-full h-11 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center transition-colors shadow-sm" href="#">
+              Ver detalles
+            </a>
+</div>
+</article>
+</div>
+<!-- Lead Capture Form Card -->
+<div class="mt-space-xl max-w-[900px] mx-auto bg-surface-container-lowest rounded-xl p-space-lg md:p-space-xl shadow-sm">
+<div class="flex flex-col items-center text-center max-w-xl mx-auto mb-space-lg">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center mb-space-sm text-primary">
+<span class="material-symbols-outlined text-[22px]">support_agent</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface tracking-tight">
+            ¿Prefieres que te ayudemos?
+          </h3>
+<div class="w-10 h-[3px] bg-[#D93A21] mt-2 mb-3"></div>
+<p class="font-body-md text-body-md text-secondary">
+            Deja tu búsqueda y un asesor te contactará cuando tengamos algo que encaje.
+          </p>
+</div>
+<form class="flex flex-col gap-space-md" onsubmit="event.preventDefault();">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md">
+<!-- Nombre -->
+<div class="md:col-span-5 flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-secondary" for="lead-name">Nombre</label>
+<input class="h-12 w-full px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest shadow-[inset_0_0_0_1px_rgba(28,27,27,0.12)] focus:shadow-[inset_0_0_0_1.5px_#000000] transition-all" id="lead-name" placeholder="Tu nombre completo" type="text"/>
+</div>
+<!-- Teléfono -->
+<div class="md:col-span-4 flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-secondary" for="lead-phone">Teléfono (WhatsApp)</label>
+<input class="h-12 w-full px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest shadow-[inset_0_0_0_1px_rgba(28,27,27,0.12)] focus:shadow-[inset_0_0_0_1.5px_#000000] transition-all" id="lead-phone" placeholder="+593 9..." type="tel"/>
+</div>
+<!-- Submit Button -->
+<div class="md:col-span-3 flex flex-col justify-end pt-1 md:pt-0">
+<button class="h-12 w-full rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center transition-colors shadow-sm" type="submit">
+                Dejar mi búsqueda
+              </button>
+</div>
+</div>
+<!-- Privacy Acceptance Checkbox -->
+<div class="flex items-start gap-space-xs pt-space-xs">
+<input class="mt-1 w-4 h-4 rounded text-primary focus:ring-0 focus:ring-offset-0 cursor-pointer accent-primary" id="privacy-agreement" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-secondary select-none cursor-pointer" for="privacy-agreement">
+              Acepto que RG me contacte según la <a class="text-on-surface underline hover:text-primary" href="#">Política de privacidad</a>
+</label>
+</div>
+</form>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-primary text-on-primary"><div class="max-w-7xl mx-auto px-gutter py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-full bg-surface-container-lowest text-primary flex items-center justify-center font-headline-sm text-headline-sm font-bold tracking-tight">RG</div><span class="font-title-md text-title-md text-on-primary tracking-tight">Inmobiliaria Constructora</span></div><p class="font-body-md text-body-md text-primary-fixed-dim max-w-sm">Venta y alquiler de propiedades exclusivas y proyectos de construcción en Ecuador y Miami.</p><div class="flex flex-col gap-space-xs pt-space-xs font-body-sm text-body-sm text-primary-fixed-dim"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-on-primary">call</span><span>+593 7 284 0000</span></div><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-on-primary">mail</span><span>info@rginmobiliaria.ec</span></div><div class="flex items-center gap-space-md pt-space-sm"><a class="font-label-sm text-label-sm text-primary-fixed-dim hover:text-on-primary transition-colors uppercase tracking-wider" href="https://facebook.com" rel="noopener" target="_blank">Facebook</a><a class="font-label-sm text-label-sm text-primary-fixed-dim hover:text-on-primary transition-colors uppercase tracking-wider" href="https://instagram.com" rel="noopener" target="_blank">Instagram</a><a class="font-label-sm text-label-sm text-primary-fixed-dim hover:text-on-primary transition-colors uppercase tracking-wider" href="https://linkedin.com" rel="noopener" target="_blank">LinkedIn</a></div></div></div><div class="flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-on-primary tracking-tight border-b border-primary-container pb-space-xs">Propiedades</span><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-primary-fixed-dim"><li><a class="hover:text-on-primary transition-colors" data-path="comprar" href="#">Casas en Cuenca</a></li><li><a class="hover:text-on-primary transition-colors" data-path="departamentos" href="#">Departamentos</a></li><li><a class="hover:text-on-primary transition-colors" data-path="terrenos" href="#">Terrenos</a></li><li><a class="hover:text-on-primary transition-colors" data-path="proyectos-en-planos" href="#">Proyectos sobre planos</a></li><li><a class="hover:text-on-primary transition-colors" data-path="exclusivas-rg" href="#">Exclusivas RG</a></li></ul></div><div class="flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-on-primary tracking-tight border-b border-primary-container pb-space-xs">Empresa</span><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-primary-fixed-dim"><li><a class="hover:text-on-primary transition-colors" data-path="quienes-somos" href="#">Quiénes somos</a></li><li><a class="hover:text-on-primary transition-colors" data-path="servicios" href="#">Servicios</a></li><li><a class="hover:text-on-primary transition-colors" data-path="blog" href="#">Blog</a></li><li><a class="hover:text-on-primary transition-colors" data-path="contacto" href="#">Contacto</a></li></ul></div><div class="flex flex-col gap-space-sm"><span class="font-title-md text-title-md text-on-primary tracking-tight border-b border-primary-container pb-space-xs">Legal</span><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-primary-fixed-dim"><li><a class="hover:text-on-primary transition-colors" data-path="politica-de-privacidad" href="#">Política de privacidad</a></li><li><a class="hover:text-on-primary transition-colors" data-path="terminos-y-condiciones" href="#">Términos y condiciones</a></li><li><a class="hover:text-on-primary transition-colors" data-path="transparencia" href="#">Transparencia</a></li></ul></div></div><div class="mt-space-xl pt-space-md border-t border-primary-container flex flex-col md:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-primary-fixed-dim"><span>© 2025 RG Inmobiliaria y Constructora. Todos los derechos reservados.</span><div class="flex items-center gap-space-md"><a class="hover:text-on-primary transition-colors" data-path="politica-de-privacidad" href="#">Política de privacidad</a><span class="text-primary-container">•</span><a class="hover:text-on-primary transition-colors" data-path="terminos-y-condiciones" href="#">Términos</a></div></div></div></footer></body></html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-error": "#ffffff",
+          "surface-container-low": "#f5f3f0",
+          "background": "#fbf9f6",
+          "surface-container": "#f0edea",
+          "on-tertiary": "#ffffff",
+          "on-secondary-container": "#69635e",
+          "outline": "#747878",
+          "on-primary": "#ffffff",
+          "tertiary-container": "#3f0300",
+          "surface-bright": "#fbf9f6",
+          "surface-dim": "#dbdad7",
+          "on-surface-variant": "#444748",
+          "on-secondary": "#ffffff",
+          "inverse-primary": "#c8c6c5",
+          "on-error-container": "#93000a",
+          "primary-container": "#1c1b1b",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-highest": "#e4e2df",
+          "primary-fixed": "#e5e2e1",
+          "surface-container-high": "#eae8e5",
+          "primary-fixed-dim": "#c8c6c5",
+          "on-primary-container": "#858383",
+          "secondary": "#635d58",
+          "on-secondary-fixed-variant": "#4b4641",
+          "inverse-on-surface": "#f2f0ed",
+          "tertiary-fixed-dim": "#ffb4a6",
+          "error": "#ba1a1a",
+          "on-tertiary-fixed-variant": "#8f1000",
+          "secondary-container": "#eae1da",
+          "on-primary-fixed-variant": "#474646",
+          "error-container": "#ffdad6",
+          "on-background": "#1b1c1a",
+          "outline-variant": "#c4c7c7",
+          "on-primary-fixed": "#1c1b1b",
+          "inverse-surface": "#30312f",
+          "on-surface": "#1b1c1a",
+          "secondary-fixed": "#eae1da",
+          "primary": "#000000",
+          "on-tertiary-fixed": "#3f0300",
+          "secondary-fixed-dim": "#cdc5bf",
+          "surface": "#fbf9f6",
+          "tertiary-fixed": "#ffdad3",
+          "surface-tint": "#5f5e5e",
+          "on-secondary-fixed": "#1f1b17",
+          "surface-variant": "#e4e2df",
+          "on-tertiary-container": "#ed482e",
+          "tertiary": "#000000"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "space-xl": "2.5rem",
+          "margin-mobile": "1.25rem",
+          "margin": "3rem",
+          "space-sm": "0.5rem",
+          "space-md": "1rem",
+          "space-lg": "1.5rem",
+          "gutter": "1.5rem",
+          "gutter-mobile": "1rem",
+          "margin-tablet": "2rem"
+        },
+        "fontFamily": {
+          "body-md": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Montserrat"
+          ],
+          "price-display": [
+            "Montserrat"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Montserrat"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "display-xl-mobile": [
+            "Montserrat"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "display-xl": [
+            "Montserrat"
+          ],
+          "headline-lg-mobile": [
+            "Montserrat"
+          ],
+          "headline-md": [
+            "Montserrat"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "title-md": [
+            "Montserrat"
+          ]
+        },
+        "fontSize": {
+          "body-md": [
+            "15px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-sm": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "letterSpacing": "0em",
+              "fontWeight": "600"
+            }
+          ],
+          "price-display": [
+            "22px",
+            {
+              "lineHeight": "28px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "body-sm": [
+            "13px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-lg": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "500"
+            }
+          ],
+          "display-xl-mobile": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.02em",
+              "fontWeight": "500"
+            }
+          ],
+          "display-xl": [
+            "48px",
+            {
+              "lineHeight": "56px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-lg-mobile": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-md": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.005em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-lg": [
+            "18px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "400"
+            }
+          ],
+          "title-md": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin flex items-center justify-between gap-space-lg"><a class="flex items-center gap-space-md shrink-0" data-path="inicio" href="#"><div class="w-11 h-11 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="font-headline-sm text-headline-sm text-on-primary tracking-tight font-bold">RG</span></div><div class="flex flex-col"><span class="font-title-md text-title-md uppercase tracking-wider text-on-surface">RG</span><span class="font-label-sm text-label-sm tracking-wide text-secondary uppercase">Inmobiliaria &amp; Constructora</span></div></a><nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-primary font-title-md"><a aria-current="page" class="transition-colors text-primary font-title-md" data-path="comprar" href="#">Comprar</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="alquilar" href="#">Alquilar</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="zonas" href="#">Zonas</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="servicios" href="#">Servicios</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="blog" href="#">Blog</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="quienes-somos" href="#">Quiénes somos</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="contacto" href="#">Contacto</a></nav><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center font-label-md text-label-md tracking-wider text-secondary"><span class="text-on-surface cursor-pointer">ES</span><span class="mx-1 text-outline-variant">|</span><span class="cursor-pointer hover:text-on-surface transition-colors">EN</span></div><a class="hidden sm:inline-flex items-center justify-center h-12 px-space-lg rounded-lg bg-primary text-on-primary font-label-md text-label-md tracking-wide hover:opacity-90 transition-opacity" data-path="agendar-visita" href="#">Agendar una visita</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface min-h-screen"><div class="flex flex-col w-full relative">
+<!-- BACKGROUND PROPERTY DETAIL VIEW (Dimmed context layer) -->
+<div class="w-full pointer-events-none select-none filter blur-[1px] opacity-40 transition-all duration-300">
+<div class="max-w-7xl mx-auto px-margin py-space-lg flex flex-col gap-space-lg">
+<!-- Breadcrumbs & Reference -->
+<div class="flex items-center justify-between text-secondary">
+<div class="flex items-center gap-space-xs font-label-md text-label-md">
+<span>Inicio</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Comprar</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Casas</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-title-md">Casa moderna en Ricaurte</span>
+</div>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm uppercase tracking-wider text-secondary">
+<span>Ref: CA-001</span>
+<span>•</span>
+<span>Cuenca, Ecuador</span>
+</div>
+</div>
+<!-- Property Headline & Badges -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-sm py-1 bg-surface-container-highest text-on-surface text-label-sm font-label-sm rounded">Venta</span>
+<span class="px-space-sm py-1 bg-primary text-secondary-fixed text-label-sm font-label-sm rounded flex items-center gap-1">
+<span class="text-[11px]">★</span> Exclusiva RG
+            </span>
+<span class="px-space-sm py-1 bg-surface-container-low text-secondary text-label-sm font-label-sm rounded">Disponible</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Casa moderna en Ricaurte</h1>
+<p class="font-body-md text-body-md text-secondary">Sector Las Américas / Ricaurte residencial, Cuenca</p>
+</div>
+<div class="flex flex-col lg:items-end">
+<span class="font-label-sm text-label-sm uppercase tracking-wide text-secondary">Precio de lista</span>
+<span class="font-price-display text-price-display text-on-surface">$145.000 USD</span>
+<span class="font-body-sm text-body-sm text-secondary">$805 / m² construcción</span>
+</div>
+</div>
+<!-- Architectural Photo Grid -->
+<div class="grid grid-cols-12 gap-gutter h-[420px] rounded-xl overflow-hidden">
+<div class="col-span-8 h-full bg-surface-container-high rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Modern architectural single family home in Ricaurte Cuenca Ecuador with white stucco, exposed volcanic stone, floor to ceiling glass windows, minimalist landscaping, overcast soft daylight, architectural photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmUCuusfVb6pGoO4l5bFoU5stqNlaT7l4TVn1WKcQhtsLjs-9uetPxa1ghsx6N_z0sesJo61kNe60VCML3atvW3IkTSVVErOzRpGsuBQlGGpLRw-Rbh5-7rFmkiC6TijYQPjNPcjZeemSZgzw5iSI4O9v3dbh-iuV2o0QIwIPa1GXwp35KGsp04rvMdg5VP5OsihwKIu2HaQpgh5XhkdtnJkiN7zYCZn8QR-ckfWSw"/>
+<div class="absolute bottom-4 left-4 bg-primary/80 backdrop-blur-sm text-on-primary px-space-md py-1 rounded text-label-sm font-label-sm">
+            Vista frontal y jardín exterior
+          </div>
+</div>
+<div class="col-span-4 flex flex-col gap-gutter h-full">
+<div class="h-1/2 bg-surface-container-high rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Interior modern living room open concept kitchen with engineered oak floors, quartz breakfast bar, minimalist downlights, architectural photography style, natural Ecuadorian mountain lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBZQW6maien9iyDyjX35agOWe5rlKSkAIvqOcmvCJTQv6uvb7ORNozClQzrGrcfVG-OA0DZH_OLTtrzOQJhTl2G-hgYOzNIOtqgGf-0tq7XvGNWgK22HX8KejO0_DzsU_KZj8IaMh93M1K-I_pmrFTzEvXwJU83bv3SJUIFTP5K4lh3bYuza4OgztAUj7uYv_ZmngbiaiQVNq3O-Yfy3FdgheebB6LRaW0KOP19KYJ"/>
+</div>
+<div class="h-1/2 bg-surface-container-high rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Master bedroom with ensuite bathroom, floor to ceiling panoramic glass window overlooking Cuenca mountains, natural wood acoustic slat panels, architectural style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyW-GS8SehfTeBzB2gKQxqjNrQu06DOQN2oo0DWP70jbyvD2TJ2zYZNNZC3LrXUaB-87HfjYXSg5AN2r6BZ8Z523j7d89by9-Yw52FHP-yX70c3CApKdmViCb8mbxe2Ckl-SEMhdcK8HwyrmcXbRcaS5dV7w6n9RL0tiVmRNfNP_6NJmmssJeQhU4bMH8byIg7LVL3KgHn31xNqtnfdMttcOf7q7cI7NQ8Ch5iC4FN"/>
+</div>
+</div>
+</div>
+<!-- Key Specs Bar -->
+<div class="grid grid-cols-4 gap-gutter bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface">bed</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">3 Habitaciones</span>
+<span class="font-body-sm text-body-sm text-secondary">Master con walking closet</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface">bathtub</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">2.5 Baños</span>
+<span class="font-body-sm text-body-sm text-secondary">Grifería de alta gama</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface">square_foot</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">180 m²</span>
+<span class="font-body-sm text-body-sm text-secondary">Terreno de 210 m²</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface">garage</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">2 Parqueaderos</span>
+<span class="font-body-sm text-body-sm text-secondary">Portón automatizado</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- FLOATING CHAT WIDGET SYSTEM -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-space-sm">
+<!-- FLOATING POP-OUT ACTIVE CHAT PANEL (Screen C2 Focus) -->
+<div class="w-[430px] h-[670px] max-h-[calc(100vh-100px)] bg-surface-container-lowest rounded-xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300" id="rg-chat-panel">
+<!-- Architectural 3px Accent Line -->
+<div class="w-full h-[3px] bg-primary flex">
+<div class="w-16 h-full bg-tertiary-fixed-dim"></div>
+</div>
+<!-- CHAT HEADER -->
+<div class="px-space-md py-3 bg-surface-container-lowest flex items-center justify-between gap-space-md shadow-[0_1px_0_0_rgba(0,0,0,0.06)] shrink-0">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative shrink-0">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-headline-sm text-sm font-bold">
+              RG
+            </div>
+<!-- Online status green beacon -->
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[#2F6B57] ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-md text-title-md text-on-surface truncate">Asistente RG</span>
+<span class="material-symbols-outlined text-[16px] text-secondary" title="Verificado">verified</span>
+</div>
+<span class="font-label-sm text-[11px] text-secondary truncate flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2F6B57]"></span>
+              En línea • Traspaso directo a asesor
+            </span>
+</div>
+</div>
+<!-- Window Actions -->
+<div class="flex items-center gap-1 text-secondary">
+<button aria-label="Minimizar chat" class="w-9 h-9 rounded-md flex items-center justify-center hover:bg-surface-container transition-colors" onclick="toggleChatWindow()" type="button">
+<span class="material-symbols-outlined text-[20px]">remove</span>
+</button>
+<button aria-label="Abrir en ventana nueva" class="w-9 h-9 rounded-md flex items-center justify-center hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">open_in_full</span>
+</button>
+<button aria-label="Cerrar chat" class="w-9 h-9 rounded-md flex items-center justify-center hover:bg-surface-container text-on-surface transition-colors" onclick="toggleChatWindow()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+<!-- CONTEXT BADGE (Property pin) -->
+<div class="px-space-md py-2 bg-surface-container-low flex items-center justify-between gap-space-sm shrink-0">
+<div class="flex items-center gap-space-xs min-w-0 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary shrink-0">home_work</span>
+<span class="truncate">Consultando: <strong class="text-on-surface font-title-md text-[13px]">Casa moderna en Ricaurte (CA-001)</strong></span>
+</div>
+<span class="text-on-surface font-title-md text-[12px] shrink-0">$145.000</span>
+</div>
+<!-- CHAT CONVERSATION STREAM -->
+<div class="flex-1 overflow-y-auto px-space-md py-space-md flex flex-col gap-space-md bg-surface-bright">
+<!-- System Timestamp -->
+<div class="flex justify-center">
+<span class="font-label-sm text-[11px] uppercase tracking-wider text-secondary bg-surface-container px-space-sm py-0.5 rounded-full">
+            Hoy • 15:42
+          </span>
+</div>
+<!-- USER MESSAGE -->
+<div class="flex justify-end">
+<div class="max-w-[85%] bg-primary text-on-primary rounded-2xl rounded-tr-xs px-space-md py-3 shadow-sm">
+<p class="font-body-md text-body-md text-on-primary leading-snug">
+              ¿El precio de $145.000 es negociable o me pueden dar algún descuento si pago de contado?
+            </p>
+<span class="block text-right text-[11px] text-surface-variant font-label-sm mt-1">15:42 • Leído</span>
+</div>
+</div>
+<!-- AI POLICY COMPLIANT RESPONSE -->
+<div class="flex items-start gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center text-[11px] font-title-md font-bold text-on-surface shrink-0 mt-1">
+            RG
+          </div>
+<div class="max-w-[86%] bg-surface-container-low text-on-surface rounded-2xl rounded-tl-xs p-space-md shadow-sm flex flex-col gap-2">
+<p class="font-body-md text-body-md leading-relaxed text-on-surface">
+              En RG no aplicamos descuentos automáticos ni modificamos precios directamente por el asistente. Cada propuesta económica y forma de pago al contado es analizada de manera personalizada por nuestro equipo directivo y el propietario.
+            </p>
+<span class="text-[11px] text-secondary font-label-sm">15:42 • Asistente RG</span>
+</div>
+</div>
+<!-- HANDOFF ADVISOR NOTICE (PRD Exact copy) -->
+<div class="ml-9 max-w-[86%] bg-surface-container rounded-xl p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-primary font-title-md text-[13px]">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+<span>Traspaso a gestor inmobiliario</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-snug">
+            Te paso con un asesor de RG para que te ayude con esto. Te escribirá en nuestro horario de atención (lunes a viernes de 9:00 a 18:00).
+          </p>
+</div>
+<!-- PRIVACY & LEAD CAPTURE CARD (PRD Exact copy) -->
+<div class="ml-9 max-w-[92%] bg-surface-container-lowest rounded-xl p-space-md shadow-md flex flex-col gap-space-sm">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">verified_user</span>
+<p class="font-body-md text-body-md text-on-surface leading-snug">
+              ¿Me permites guardar tu nombre y tu número para que un asesor te contacte? Los usaremos solo para eso, según nuestra Política de privacidad.
+            </p>
+</div>
+<!-- Embedded Form inside flow -->
+<form class="flex flex-col gap-space-sm mt-1" onsubmit="event.preventDefault(); submitLeadHandoff();">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-[12px] text-secondary">Nombre completo</label>
+<input class="h-11 px-3 rounded-lg bg-surface-bright text-on-surface font-body-md text-body-md placeholder:text-secondary focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" placeholder="Ej. Andrés Vintimilla" required="" type="text" value="Andrés Vintimilla"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-[12px] text-secondary">Teléfono (WhatsApp)</label>
+<div class="flex items-center bg-surface-bright rounded-lg overflow-hidden shadow-sm focus-within:ring-1 focus-within:ring-primary">
+<span class="px-3 py-2 text-secondary font-label-md text-label-md bg-surface-container-high shrink-0">+593</span>
+<input class="h-11 px-3 w-full bg-transparent text-on-surface font-body-md text-body-md placeholder:text-secondary focus:outline-none" placeholder="099 876 5432" required="" type="tel" value="099 824 1102"/>
+</div>
+</div>
+<!-- Checkbox with explicit consent -->
+<label class="flex items-start gap-space-sm cursor-pointer mt-1">
+<input checked="" class="mt-1 w-4 h-4 rounded text-primary focus:ring-primary" required="" type="checkbox"/>
+<span class="font-body-sm text-[12px] text-secondary leading-tight">
+                Acepto que RG me contacte según la <a class="text-on-surface underline" href="#">Política de privacidad</a>.
+              </span>
+</label>
+<!-- Handoff Action Button -->
+<button class="w-full mt-2 h-11 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-space-xs hover:opacity-90 active:scale-[0.99] transition-all" id="btn-handoff" type="submit">
+<span>Conectar con un asesor</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+<div class="hidden flex items-center gap-space-xs p-2 bg-[#E4F0EB] text-[#2F6B57] rounded-lg font-label-sm text-[12px]" id="handoff-success">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Solicitud recibida. Un asesor te escribirá en breve.</span>
+</div>
+</div>
+<!-- QUICK ACTION ALTERNATIVES -->
+<div class="ml-9 flex flex-col gap-space-xs pt-1">
+<span class="font-label-sm text-[11px] uppercase tracking-wider text-secondary">O vías rápidas de contacto</span>
+<div class="flex flex-wrap gap-1.5">
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors font-label-sm text-[12px]" href="tel:+59372840000">
+<span class="material-symbols-outlined text-[14px]">call</span>
+<span>Llamar (+593 7 284 0000)</span>
+</a>
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors font-label-sm text-[12px]" href="#">
+<span class="material-symbols-outlined text-[14px]">chat</span>
+<span>WhatsApp directo</span>
+</a>
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors font-label-sm text-[12px]" href="#">
+<span class="material-symbols-outlined text-[14px]">calendar_month</span>
+<span>Agendar visita presencial</span>
+</a>
+</div>
+</div>
+</div>
+<!-- CHAT COMPOSER & FOOTNOTE -->
+<div class="px-space-md pt-space-sm pb-space-md bg-surface-container-lowest shrink-0 shadow-[0_-1px_0_0_rgba(0,0,0,0.06)] flex flex-col gap-space-xs">
+<form class="flex items-center gap-space-xs" onsubmit="event.preventDefault(); sendCustomMessage();">
+<div class="flex-1 flex items-center bg-surface-container-low rounded-lg px-space-sm focus-within:ring-1 focus-within:ring-primary shadow-inner">
+<input class="w-full h-11 bg-transparent text-on-surface font-body-md text-body-md placeholder:text-secondary focus:outline-none" id="chat-input-text" placeholder="Escribe tu consulta sobre la propiedad..." type="text"/>
+<button aria-label="Nota de voz" class="w-8 h-8 rounded flex items-center justify-center text-secondary hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+</div>
+<button aria-label="Enviar mensaje" class="w-11 h-11 rounded-lg bg-primary text-on-primary flex items-center justify-center hover:opacity-90 active:scale-95 transition-all shrink-0" type="submit">
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</form>
+<!-- Compliance & Transparency Notice -->
+<div class="flex items-center justify-between text-secondary font-label-sm text-[11px] px-1">
+<span class="truncate">RG no comparte datos con terceros ni inventa información.</span>
+<span class="flex items-center gap-0.5 text-secondary shrink-0">
+<span class="material-symbols-outlined text-[12px]">lock</span>
+            Cifrado
+          </span>
+</div>
+</div>
+</div>
+<!-- FLOATING CHAT TRIGGER BUTTON (COLLAPSED / DOCKED STATUS PILL) -->
+<div class="flex items-center gap-space-sm">
+<!-- Context Teaser Bubble -->
+<div class="hidden sm:flex items-center gap-space-xs bg-surface-container-lowest text-on-surface px- space-md py-2 px-space-md rounded-full shadow-lg cursor-pointer hover:bg-surface-container transition-all" id="chat-teaser" onclick="toggleChatWindow()">
+<span class="w-2 h-2 rounded-full bg-[#2F6B57] animate-pulse"></span>
+<span class="font-label-md text-label-md">¿Preguntas sobre Casa en Ricaurte?</span>
+</div>
+<!-- Main FAB Trigger -->
+<button aria-label="Abrir o cerrar asistente RG" class="w-14 h-14 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-transform relative group" onclick="toggleChatWindow()" type="button">
+<div class="w-11 h-11 rounded-full flex items-center justify-center">
+<span class="font-headline-sm text-sm font-bold tracking-tight text-on-primary">RG</span>
+</div>
+<!-- Online Indicator Dot -->
+<span class="absolute top-1 right-1 w-3.5 h-3.5 rounded-full bg-[#2F6B57] ring-2 ring-surface-container-lowest"></span>
+</button>
+</div>
+</div>
+<script>
+    function toggleChatWindow() {
+      const panel = document.getElementById('rg-chat-panel');
+      const teaser = document.getElementById('chat-teaser');
+      if (panel.classList.contains('hidden')) {
+        panel.classList.remove('hidden');
+        teaser.classList.add('hidden');
+      } else {
+        panel.classList.add('hidden');
+        teaser.classList.remove('hidden');
+      }
+    }
+
+    function submitLeadHandoff() {
+      const btn = document.getElementById('btn-handoff');
+      const success = document.getElementById('handoff-success');
+      btn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">progress_activity</span><span>Conectando...</span>';
+      setTimeout(() => {
+        btn.classList.add('hidden');
+        success.classList.remove('hidden');
+      }, 700);
+    }
+
+    function sendCustomMessage() {
+      const input = document.getElementById('chat-input-text');
+      if (!input.value.trim()) return;
+      input.value = '';
+    }
+  </script>
+</div></main><footer class="w-full bg-primary-container text-on-primary text-body-md font-body-md"><div class="max-w-7xl mx-auto px-margin py-margin"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-gutter mb-margin"><div class="lg:col-span-2 flex flex-col gap-space-md"><div class="flex items-center gap-space-md"><div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center shrink-0"><span class="font-headline-sm text-headline-sm text-primary font-bold">RG</span></div><div class="flex flex-col"><span class="font-title-md text-title-md text-on-primary uppercase tracking-wider">RG</span><span class="font-label-sm text-label-sm tracking-wide text-on-primary-container uppercase">Inmobiliaria &amp; Constructora</span></div></div><p class="font-body-sm text-body-sm text-on-primary-container max-w-sm mt-space-sm">Desarrollo y comercialización de residencias exclusivas y proyectos arquitectónicos de alta precisión en Cuenca y el sur del Ecuador.</p><div class="flex flex-col gap-space-xs mt-space-md font-body-sm text-body-sm text-on-primary-container"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-base">call</span><span>+593 7 284 0000</span></div><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-base">mail</span><span>info@rginmobiliaria.ec</span></div><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-base">location_on</span><span>Av. Florencia Astudillo &amp; Alfonso Cordero, Cuenca</span></div></div></div><div class="flex flex-col gap-space-md"><span class="font-title-md text-title-md text-on-primary uppercase tracking-wide">Propiedades</span><ul class="flex flex-col gap-space-sm font-body-sm text-body-sm text-on-primary-container"><li><a class="hover:text-on-primary transition-colors" data-path="comprar" href="#">Comprar Casas</a></li><li><a class="hover:text-on-primary transition-colors" data-path="comprar" href="#">Departamentos &amp; Penthouses</a></li><li><a class="hover:text-on-primary transition-colors" data-path="alquilar" href="#">Propiedades en Alquiler</a></li><li><a class="hover:text-on-primary transition-colors" data-path="zonas" href="#">Zonas Exclusivas</a></li><li><a class="hover:text-on-primary transition-colors" data-path="comprar" href="#">Proyectos en Planos</a></li></ul></div><div class="flex flex-col gap-space-md"><span class="font-title-md text-title-md text-on-primary uppercase tracking-wide">Compañía</span><ul class="flex flex-col gap-space-sm font-body-sm text-body-sm text-on-primary-container"><li><a class="hover:text-on-primary transition-colors" data-path="quienes-somos" href="#">Quiénes somos</a></li><li><a class="hover:text-on-primary transition-colors" data-path="servicios" href="#">Servicios de Construcción</a></li><li><a class="hover:text-on-primary transition-colors" data-path="blog" href="#">Publicaciones &amp; Blog</a></li><li><a class="hover:text-on-primary transition-colors" data-path="contacto" href="#">Atención al Cliente</a></li><li><a class="hover:text-on-primary transition-colors" data-path="agendar-visita" href="#">Agendar Cita Privada</a></li></ul></div><div class="flex flex-col gap-space-md"><span class="font-title-md text-title-md text-on-primary uppercase tracking-wide">Legal &amp; Licencias</span><ul class="flex flex-col gap-space-sm font-body-sm text-body-sm text-on-primary-container"><li><a class="hover:text-on-primary transition-colors" data-path="terminos-condiciones" href="#">Términos &amp; Condiciones</a></li><li><a class="hover:text-on-primary transition-colors" data-path="politica-privacidad" href="#">Política de Privacidad</a></li><li><a class="hover:text-on-primary transition-colors" data-path="licencias-urbanas" href="#">Licencias Urbanísticas</a></li><li><a class="hover:text-on-primary transition-colors" data-path="aviso-legal" href="#">Aviso Legal</a></li></ul></div></div><div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md font-label-sm text-label-sm text-on-primary-container"><p>© 2025 RG Inmobiliaria &amp; Constructora. Todos los derechos reservados.</p><p class="tracking-wide">Cuenca, Ecuador • Miami, USA</p></div></div></footer></body></html>

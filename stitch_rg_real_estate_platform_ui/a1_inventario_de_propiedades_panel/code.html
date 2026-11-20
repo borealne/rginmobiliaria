@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"surface-container-low":"#f5f3f0","surface-container":"#f0edea","surface-variant":"#e4e2df","inverse-surface":"#30312f","secondary-container":"#eae1da","secondary":"#635d58","primary":"#000000","surface":"#fbf9f6","on-surface-variant":"#444748","outline-variant":"#c4c7c7","secondary-fixed":"#eae1da","error-container":"#ffdad6","outline":"#747878","surface-bright":"#fbf9f6","surface-container-highest":"#e4e2df","on-primary-fixed-variant":"#474646","on-secondary":"#ffffff","primary-container":"#1c1b1b","surface-container-lowest":"#ffffff","on-secondary-container":"#69635e","on-background":"#1b1c1a","inverse-primary":"#c8c6c5","on-tertiary-fixed-variant":"#8f1000","tertiary-fixed-dim":"#ffb4a6","surface-tint":"#5f5e5e","on-tertiary-container":"#ed482e","primary-fixed":"#e5e2e1","inverse-on-surface":"#f2f0ed","on-secondary-fixed":"#1f1b17","error":"#ba1a1a","surface-dim":"#dbdad7","tertiary-container":"#3f0300","on-error":"#ffffff","on-primary-container":"#858383","on-secondary-fixed-variant":"#4b4641","background":"#fbf9f6","on-tertiary-fixed":"#3f0300","on-primary-fixed":"#1c1b1b","on-error-container":"#93000a","on-tertiary":"#ffffff","on-primary":"#ffffff","tertiary-fixed":"#ffdad3","surface-container-high":"#eae8e5","on-surface":"#1b1c1a","primary-fixed-dim":"#c8c6c5","secondary-fixed-dim":"#cdc5bf","tertiary":"#000000"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-tablet":"2rem","space-md":"1rem","margin":"3rem","gutter-mobile":"1rem","space-sm":"0.5rem","margin-mobile":"1.25rem","space-xs":"0.25rem","gutter":"1.5rem","space-xl":"2.5rem","space-lg":"1.5rem"},"fontFamily":{"title-md":["Montserrat"],"headline-lg-mobile":["Montserrat"],"body-lg":["Inter"],"headline-lg":["Montserrat"],"headline-sm":["Montserrat"],"display-xl":["Montserrat"],"display-xl-mobile":["Montserrat"],"headline-md":["Montserrat"],"label-sm":["Inter"],"body-sm":["Inter"],"price-display":["Montserrat"],"label-md":["Inter"],"body-md":["Inter"]},"fontSize":{"title-md":["16px",{"lineHeight":"24px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"0em","fontWeight":"600"}],"display-xl":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"display-xl-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.005em","fontWeight":"600"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"body-sm":["13px",{"lineHeight":"20px","fontWeight":"400"}],"price-display":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"body-md":["15px",{"lineHeight":"24px","fontWeight":"400"}]}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[260px] bg-primary text-on-primary z-50 flex flex-col justify-between select-none"><div class="flex flex-col flex-1 min-h-0"><div class="h-20 px-5 flex items-center gap-3.5 bg-primary/95"><div class="w-9 h-9 rounded-full bg-surface text-primary flex items-center justify-center font-title-md text-title-md shrink-0 shadow-sm"><span class="tracking-tighter">RG</span></div><div class="flex flex-col overflow-hidden"><span class="font-title-md text-title-md leading-tight text-surface tracking-tight truncate">RG Inmobiliaria</span><span class="font-label-sm text-label-sm text-surface-variant/80 tracking-wide truncate uppercase">Panel de Control</span></div></div><div class="px-4 py-2"><div class="h-px w-full bg-inverse-surface"></div></div><nav class="flex-1 px-3 py-3 space-y-1 overflow-y-auto" data-active-classes="bg-surface-container-lowest text-primary font-title-md rounded-lg"><a aria-current="page" class="group flex items-center gap-3 px-3 py-2.5 transition-all duration-150 bg-surface-container-lowest text-primary font-title-md rounded-lg" data-path="propiedades" href="#"><span class="material-symbols-outlined text-[20px] transition-colors">apartment</span><span class="truncate">Propiedades</span></a><a class="group flex items-center gap-3 px-3 py-2.5 rounded-lg text-surface-variant font-label-md text-label-md transition-all duration-150 hover:bg-surface-container-high hover:text-on-surface" data-path="contenido-web" href="#"><span class="material-symbols-outlined text-[20px] transition-colors">web</span><span class="truncate">Contenido web</span></a><a class="group flex items-center gap-3 px-3 py-2.5 rounded-lg text-surface-variant font-label-md text-label-md transition-all duration-150 hover:bg-surface-container-high hover:text-on-surface" data-path="blog" href="#"><span class="material-symbols-outlined text-[20px] transition-colors">edit_note</span><span class="truncate">Blog</span></a><a class="group flex items-center gap-3 px-3 py-2.5 rounded-lg text-surface-variant font-label-md text-label-md transition-all duration-150 hover:bg-surface-container-high hover:text-on-surface" data-path="contactos-y-pipeline" href="#"><span class="material-symbols-outlined text-[20px] transition-colors">view_kanban</span><span class="truncate">Contactos y pipeline</span></a><a class="group flex items-center gap-3 px-3 py-2.5 rounded-lg text-surface-variant font-label-md text-label-md transition-all duration-150 hover:bg-surface-container-high hover:text-on-surface" data-path="configuracion" href="#"><span class="material-symbols-outlined text-[20px] transition-colors">settings</span><span class="truncate">Configuración</span></a></nav></div><div class="p-4 bg-primary-container"><div class="flex items-center gap-3 mb-3"><div class="w-9 h-9 rounded-full bg-surface-container-low text-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[18px]">person</span></div><div class="flex flex-col min-w-0 flex-1"><span class="font-label-md text-label-md text-surface font-semibold truncate">Raúl</span><span class="font-label-sm text-label-sm text-surface-variant/70 truncate">Super admin</span></div></div><button class="w-full flex items-center justify-center gap-2 py-2 px-3 rounded bg-inverse-surface hover:bg-surface hover:text-primary text-surface font-label-sm text-label-sm transition-colors duration-150" type="button"><span class="material-symbols-outlined text-[16px]">logout</span><span>Cerrar sesión</span></button></div></aside><div class="pl-[260px]"><header class="fixed top-0 left-[260px] right-0 h-20 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-gutter flex items-center justify-between gap-4"><div class="flex items-center gap-4 flex-1 max-w-xl"><div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>/</span><span class="text-on-surface font-semibold uppercase tracking-wider">Administración</span></div><div class="relative flex-1 hidden sm:block"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[18px] text-outline">search</span><input class="w-full h-10 pl-9 pr-4 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder-secondary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Buscar propiedades, clientes, códigos..." type="text"/></div></div><div class="flex items-center gap-3"><div class="flex items-center bg-surface-container-low rounded-lg p-1 text-on-surface-variant font-label-sm text-label-sm"><button class="px-2.5 py-1 rounded bg-surface text-on-surface font-semibold shadow-sm" type="button">ES</button><button class="px-2.5 py-1 rounded text-secondary hover:text-on-surface transition-colors" type="button">EN</button></div><button class="relative w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error"></span></button><div class="h-6 w-px bg-outline-variant/50 mx-1"></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-20 px-gutter bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Page Header -->
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 pb-8">
+<div class="flex flex-col gap-2">
+<nav class="flex items-center gap-2 text-secondary font-label-sm text-label-sm">
+<span>Panel</span>
+<span class="text-outline-variant">/</span>
+<span>Propiedades</span>
+<span class="text-outline-variant">/</span>
+<span class="text-primary font-medium">Inventario general</span>
+</nav>
+<div class="relative pt-1">
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight flex items-baseline gap-3">
+          Inventario de propiedades
+          <span class="inline-block w-8 h-[3px] bg-[#D93A21] self-center rounded-full"></span>
+</h1>
+<p class="font-body-md text-body-md text-secondary mt-1 max-w-2xl">
+          Gestión centralizada del catálogo inmobiliario, estado de publicación y vitrina del inicio.
+        </p>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<button class="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-lg bg-surface-container-low text-primary font-label-md text-label-md hover:bg-surface-container transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[19px]">file_download</span>
+<span>Exportar</span>
+</button>
+<button class="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors shadow-md" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Nueva propiedad</span>
+</button>
+</div>
+</div>
+<!-- KPI Metrics Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 pb-8">
+<!-- Metric 1: Total -->
+<div class="p-6 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Total propiedades</span>
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">domain</span>
+</div>
+</div>
+<div class="mt-4">
+<span class="font-display-xl text-display-xl text-primary font-bold tracking-tight">25</span>
+<div class="flex items-center gap-1.5 mt-1 text-secondary font-body-sm text-body-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-[#2F6B57]"></span>
+<span>18 activas en web</span>
+</div>
+</div>
+</div>
+<!-- Metric 2: En Venta -->
+<div class="p-6 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">En Venta</span>
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">sell</span>
+</div>
+</div>
+<div class="mt-4">
+<span class="font-display-xl text-display-xl text-primary font-bold tracking-tight">19</span>
+<div class="flex items-center gap-1.5 mt-1 text-secondary font-body-sm text-body-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-[#8F5F10]"></span>
+<span>3 con reserva en proceso</span>
+</div>
+</div>
+</div>
+<!-- Metric 3: En Alquiler -->
+<div class="p-6 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">En Alquiler</span>
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">key</span>
+</div>
+</div>
+<div class="mt-4">
+<span class="font-display-xl text-display-xl text-primary font-bold tracking-tight">6</span>
+<div class="flex items-center gap-1.5 mt-1 text-secondary font-body-sm text-body-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-[#2F6B57]"></span>
+<span>2 disponibles este mes</span>
+</div>
+</div>
+</div>
+<!-- Metric 4: Slider Slots Alert Card -->
+<div class="p-6 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Slider de inicio</span>
+<span class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-semibold bg-[#F5EEDF] text-[#8C631F]">
+          3 de 3 en uso
+        </span>
+</div>
+<div class="mt-3">
+<div class="flex items-baseline justify-between mb-1.5">
+<span class="font-headline-md text-headline-md text-primary font-bold">Capacidad completa</span>
+<span class="font-label-sm text-label-sm font-semibold text-secondary">100%</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-[#C9A25C] w-full rounded-full transition-all"></div>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2">
+<span class="font-body-sm text-body-sm text-secondary truncate max-w-[150px]">Máx. 3 propiedades</span>
+<a class="inline-flex items-center gap-1 font-label-sm text-label-sm font-semibold text-primary hover:underline" href="#">
+<span>Configurar</span>
+<span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Search & Filter Bar Component -->
+<div class="p-4 mb-6 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-4">
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center gap-3">
+<!-- Search -->
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[20px] text-secondary">search</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder-secondary focus:outline-none focus:bg-surface-container focus:ring-1 focus:ring-primary" placeholder="Buscar por nombre, código (ej. CA-001) o zona..." type="text"/>
+</div>
+<!-- Quick Dropdowns -->
+<div class="flex flex-wrap sm:flex-nowrap items-center gap-2">
+<div class="relative min-w-[140px]">
+<select class="w-full h-11 pl-3.5 pr-8 appearance-none rounded-lg bg-surface-container-low font-label-md text-label-md text-on-surface focus:outline-none cursor-pointer">
+<option selected="">Tipo: Todos</option>
+<option>Casas</option>
+<option>Departamentos</option>
+<option>Terrenos</option>
+<option>Edificios</option>
+<option>Locales</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-[18px] text-secondary">expand_more</span>
+</div>
+<div class="relative min-w-[130px]">
+<select class="w-full h-11 pl-3.5 pr-8 appearance-none rounded-lg bg-surface-container-low font-label-md text-label-md text-on-surface focus:outline-none cursor-pointer">
+<option selected="">Operación: Todas</option>
+<option>Venta</option>
+<option>Alquiler</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-[18px] text-secondary">expand_more</span>
+</div>
+<div class="relative min-w-[130px]">
+<select class="w-full h-11 pl-3.5 pr-8 appearance-none rounded-lg bg-surface-container-low font-label-md text-label-md text-on-surface focus:outline-none cursor-pointer">
+<option selected="">Estado: Todos</option>
+<option>Disponible</option>
+<option>Reservada</option>
+<option>En construcción</option>
+<option>Sobre planos</option>
+<option>Vendida</option>
+<option>Alquilada</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-[18px] text-secondary">expand_more</span>
+</div>
+<div class="relative min-w-[140px]">
+<select class="w-full h-11 pl-3.5 pr-8 appearance-none rounded-lg bg-surface-container-low font-label-md text-label-md text-on-surface focus:outline-none cursor-pointer">
+<option selected="">Publicación: Todas</option>
+<option>Exclusivas RG</option>
+<option>Compartidas</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-[18px] text-secondary">expand_more</span>
+</div>
+<div class="relative min-w-[130px]">
+<select class="w-full h-11 pl-3.5 pr-8 appearance-none rounded-lg bg-surface-container-low font-label-md text-label-md text-on-surface focus:outline-none cursor-pointer">
+<option selected="">Slider: Todos</option>
+<option>En slider (3)</option>
+<option>Fuera de slider</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-[18px] text-secondary">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Active Filters & Counter Summary -->
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-secondary">Mostrando <strong class="text-primary font-semibold">6</strong> de 25 propiedades</span>
+<span class="text-outline-variant">•</span>
+<button class="font-label-sm text-label-sm text-secondary hover:text-primary underline transition-colors" type="button">
+          Limpiar filtros
+        </button>
+</div>
+<div class="flex items-center gap-3 text-secondary font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-[#111111]"></span>
+          Slider activo (3/3)
+        </span>
+<span class="flex items-center gap-1">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-[#ECEAE7]"></span>
+          Inactivo / Límite
+        </span>
+</div>
+</div>
+</div>
+<!-- Table Container -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-secondary font-label-sm text-label-sm uppercase tracking-wider select-none">
+<th class="py-4 pl-6 pr-3 w-10">
+<input class="w-4 h-4 rounded cursor-pointer accent-primary" type="checkbox"/>
+</th>
+<th class="py-4 px-4 font-semibold">Propiedad / Código</th>
+<th class="py-4 px-4 font-semibold">Zona</th>
+<th class="py-4 px-4 font-semibold">Operación & Precio</th>
+<th class="py-4 px-4 font-semibold">Estado</th>
+<th class="py-4 px-4 font-semibold">Publicación</th>
+<th class="py-4 px-4 font-semibold text-center">Slider Inicio</th>
+<th class="py-4 pr-6 pl-4 font-semibold text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low font-body-sm text-body-sm text-on-surface">
+<!-- ROW 1: Casa en Ricaurte -->
+<tr class="hover:bg-surface transition-colors group">
+<td class="py-4 pl-6 pr-3">
+<input class="w-4 h-4 rounded cursor-pointer accent-primary" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3.5">
+<div class="w-16 h-11 rounded-lg overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Architectural modern residential house in Ricaurte Cuenca featuring raw exposed concrete minimalist facades, large black steel frame glass windows, and warm ambient interior architectural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYKEZ8ymmzbNzR5SAtKkIb64S8rrY3_Q0W3W-akAoTjsBEGRsR2Dj168LheT6qxqv-jgbyYH-u4-V830nqYz4WZZ3p9wPRAwIxHWi9GDvK70lLMHf4vDSGi9Rtb4VlRDFJu9Qr_fhvh3d909esTmkLJ9QhYNkRrUHyQr4W7-q0AUE_hS2m4Nwm2L9nN2lAHXDfpGPIymxShNUGOfAqC-b9swexgO9wAh8AHToS3Qty"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-primary font-semibold truncate leading-snug">Casa moderna en Ricaurte</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-1.5 py-0.5 rounded">CA-001</span>
+<button class="text-secondary hover:text-primary" title="Copiar código" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-medium text-primary">Cuenca</span>
+<span class="text-secondary font-label-sm text-label-sm">Ricaurte</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-bold text-primary">$145.000 <span class="text-label-sm font-normal text-secondary">USD</span></span>
+<span class="font-label-sm text-label-sm text-secondary">Venta</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-label-sm font-medium bg-[#E4F0EB] text-[#2F6B57]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2F6B57]"></span>
+                Disponible
+              </span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-label-sm font-label-sm font-semibold bg-primary text-[#C9A25C] shadow-sm">
+<span class="text-[13px] leading-none">★</span>
+<span>Exclusiva RG</span>
+</span>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col items-center justify-center gap-1">
+<!-- Toggle Active -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+<span class="font-label-sm text-label-sm text-secondary">Posición 1</span>
+</div>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm font-medium hover:bg-surface-variant transition-colors" type="button">
+                  Editar
+                </button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-secondary hover:bg-surface-container hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 2: Edificio Mirador -->
+<tr class="hover:bg-surface transition-colors group">
+<td class="py-4 pl-6 pr-3">
+<input class="w-4 h-4 rounded cursor-pointer accent-primary" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3.5">
+<div class="w-16 h-11 rounded-lg overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Architectural modern mid-rise condominium development named Mirador in El Batan Cuenca, glass balconies with river valley views, elegant dusk architectural rendering style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZzSJOsenl_Jrbj0kARpSwkpWy-VskKFGs3GfKgKkAZdU2qN-7gZaX3xVi39E_yh7Qfe0ifoDEKFjvzJj9U7JnmXpNv7SoPHQeIMvfFAWFNS14pRhbkmfRetyHB1nt8LrBobIOC9smDMj_YZOeT-AiuRPYuxG7EEQuiwY-Vqt17-uNoZD0redncqMwWzPLO-TzG02Db_FRnLowbcgOPBX6f9trIT07cDHb6Vj-ok1X"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-primary font-semibold truncate leading-snug">Edificio Mirador</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-1.5 py-0.5 rounded">ED-003</span>
+<button class="text-secondary hover:text-primary" title="Copiar código" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-medium text-primary">Cuenca</span>
+<span class="text-secondary font-label-sm text-label-sm">El Batán</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-bold text-primary">Desde $89.000 <span class="text-label-sm font-normal text-secondary">USD</span></span>
+<span class="font-label-sm text-label-sm text-secondary">Venta · 4 unidades</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-label-sm font-medium bg-[#E3EBF4] text-[#3A5F8A]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#3A5F8A]"></span>
+                Planos / Obra 60%
+              </span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-label-sm font-label-sm font-semibold bg-primary text-[#C9A25C] shadow-sm">
+<span class="text-[13px] leading-none">★</span>
+<span>Exclusiva RG</span>
+</span>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col items-center justify-center gap-1">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+<span class="font-label-sm text-label-sm text-secondary">Posición 2</span>
+</div>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm font-medium hover:bg-surface-variant transition-colors" type="button">
+                  Editar
+                </button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-secondary hover:bg-surface-container hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 3: Suite en El Centro -->
+<tr class="hover:bg-surface transition-colors group">
+<td class="py-4 pl-6 pr-3">
+<input class="w-4 h-4 rounded cursor-pointer accent-primary" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3.5">
+<div class="w-16 h-11 rounded-lg overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="High-end furnished colonial revival luxury loft suite in Historic Center Cuenca with high wooden exposed ceilings, whitewashed adobe accents, modern minimalist furniture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8I-ykEu1ql9gOl-JmPsqEnFG3atfEiMjIPWqXvfr4WjWjuHNNkicSW0ZByZlBQRRofIorOQdUMN6C3HP-9iFgjaNZ0sfNW6HP9t5kHrcVUu625pL6Q96kzyB7_o772BweVFDCDogtlMKFyffLeucL7trUm14VeRSCt-RQ1O-ypMPt3cbrUUIIc4yTc3kNMdLO1CN-tNTMsTchC7FPYR8BJqTvjvdDxVKzD4zvQ5oH"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-primary font-semibold truncate leading-snug">Suite amoblada en El Centro</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-1.5 py-0.5 rounded">DP-021</span>
+<button class="text-secondary hover:text-primary" title="Copiar código" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-medium text-primary">Cuenca</span>
+<span class="text-secondary font-label-sm text-label-sm">Centro Histórico</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-bold text-primary">$450 <span class="text-label-sm font-normal text-secondary">USD / mes</span></span>
+<span class="font-label-sm text-label-sm text-secondary">Alquiler</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-label-sm font-medium bg-[#E4F0EB] text-[#2F6B57]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2F6B57]"></span>
+                Disponible
+              </span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-label-sm font-label-sm font-semibold bg-primary text-[#C9A25C] shadow-sm">
+<span class="text-[13px] leading-none">★</span>
+<span>Exclusiva RG</span>
+</span>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col items-center justify-center gap-1">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+<span class="font-label-sm text-label-sm text-secondary">Posición 3</span>
+</div>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm font-medium hover:bg-surface-variant transition-colors" type="button">
+                  Editar
+                </button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-secondary hover:bg-surface-container hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 4: Departamento en Totoracocha (Reservada) -->
+<tr class="hover:bg-surface transition-colors group">
+<td class="py-4 pl-6 pr-3">
+<input class="w-4 h-4 rounded cursor-pointer accent-primary" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3.5">
+<div class="w-16 h-11 rounded-lg overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Warm contemporary modern apartment interior in Totoracocha with private terrace balcony, polished wooden flooring, natural warm daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJJvcPDN4yTBQQHuscHhK8J4nUah3n7DdCiBS5f7f_i1oRDIAfx-PO09D4n8YrJU1_1z79kH2ceOD8ASyYm_eIVlSLtgZCXrbDPZaIi78IPwWvnHIIAm4yIdYyMSPpOGyJFrmT9psy-XZYXP7uEsXJd-ui-BmDQSG0-fxaRtk0tzCnOwIVtgNXohSi2qLs_1ilM7A0i7m_tx9qm22-tEq9KV449Anr7id_1-vSlto7"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-primary font-semibold truncate leading-snug">Departamento con balcón en Totoracocha</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-1.5 py-0.5 rounded">DP-014</span>
+<button class="text-secondary hover:text-primary" title="Copiar código" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-medium text-primary">Cuenca</span>
+<span class="text-secondary font-label-sm text-label-sm">Totoracocha</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-bold text-primary">$98.500 <span class="text-label-sm font-normal text-secondary">USD</span></span>
+<span class="font-label-sm text-label-sm text-secondary">Venta</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-label-sm font-medium bg-[#F7EBD3] text-[#8F5F10]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#8F5F10]"></span>
+                Reservada
+              </span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-1 rounded-md text-label-sm font-label-sm font-medium bg-surface-container text-secondary">
+                Compartida (3%)
+              </span>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col items-center justify-center gap-1" title="Límite máximo de 3 alcanzado">
+<div class="w-10 h-5 bg-surface-variant opacity-60 rounded-full relative cursor-not-allowed">
+<div class="absolute top-[2px] left-[2px] bg-white rounded-full h-4 w-4"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline-variant">Límite lleno</span>
+</div>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm font-medium hover:bg-surface-variant transition-colors" type="button">
+                  Editar
+                </button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-secondary hover:bg-surface-container hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 5: Terreno en Turi -->
+<tr class="hover:bg-surface transition-colors group">
+<td class="py-4 pl-6 pr-3">
+<input class="w-4 h-4 rounded cursor-pointer accent-primary" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3.5">
+<div class="w-16 h-11 rounded-lg overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Expansive scenic mountain valley residential building land lot in Turi Cuenca overlooking colonial red rooftops, lush Andean trees under sunny clear blue sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXuRAhk_iVpgViIDwy-pjEIQKmaQ37ZX5FYtIytiFwMBppVB_p7h85uGBnln5nCVkJpWEfUYXbE0FEo31jQo3ihE-hNNzYgSkMUOZR6SzboMjjmZEzEtqNOPJysLYEeIdrWN2UKITxXymImS6BquT8mINmvJi2k6qV5GL0-_KOKWQrPQF0WXd4mcm1TqQEBRPAu-9OBTqLdOkRRyqGqi8ZK7U0_HIXmgd-96x6HRfD"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-primary font-semibold truncate leading-snug">Terreno con vista en Turi</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-1.5 py-0.5 rounded">TE-007</span>
+<button class="text-secondary hover:text-primary" title="Copiar código" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-medium text-primary">Cuenca</span>
+<span class="text-secondary font-label-sm text-label-sm">Turi</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-bold text-primary">$62.000 <span class="text-label-sm font-normal text-secondary">USD</span></span>
+<span class="font-label-sm text-label-sm text-secondary">Venta · 400 m²</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-label-sm font-medium bg-[#E4F0EB] text-[#2F6B57]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2F6B57]"></span>
+                Disponible
+              </span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2.5 py-1 rounded-md text-label-sm font-label-sm font-medium bg-surface-container text-secondary">
+                Compartida
+              </span>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col items-center justify-center gap-1">
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+<span class="font-label-sm text-label-sm text-secondary">Inactivo</span>
+</div>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm font-medium hover:bg-surface-variant transition-colors" type="button">
+                  Editar
+                </button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-secondary hover:bg-surface-container hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 6: Casa VIS en Machángara (Sold / Locked row rule) -->
+<tr class="bg-surface-container-low/40 opacity-75 hover:opacity-100 transition-opacity">
+<td class="py-4 pl-6 pr-3">
+<input class="w-4 h-4 rounded cursor-not-allowed accent-secondary opacity-40" disabled="" type="checkbox"/>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3.5">
+<div class="w-16 h-11 rounded-lg overflow-hidden shrink-0 bg-surface-container relative">
+<img class="w-full h-full object-cover grayscale" data-alt="Completed residential suburban family house in Machangara Cuenca with brick facade, compact clean modern layout, photographed under soft overcast daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT0U_wE03dnuLzvXQV18UXYHBOfjuIFsMa86wK9T_zHfOXwIdRz4GNvj-PN0tBI2tD0wbEqy7CCHFllbU3AwvsOAAnLAMHxfwZS-MSy_wLRy_f--kFA5O6NgpvKyLBj-hhS7Z1lrHg2t96u_c2MbXs6uXKJz4NWCKKusOyRZx4ElqAz0MNO7lP-jfTTTO25luZqocEi7dVLmacXCAiAnH1AQC2fQA3BBSirmTQnUc9"/>
+<div class="absolute inset-0 bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[18px]">lock</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-secondary font-medium truncate leading-snug line-through decoration-outline">Casa VIS en Machángara</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-1.5 py-0.5 rounded">CA-019</span>
+<span class="font-label-sm text-label-sm text-outline">Operación cerrada</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-medium text-secondary">Cuenca</span>
+<span class="text-outline font-label-sm text-label-sm">Machángara</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-semibold text-secondary">$68.000 <span class="text-label-sm font-normal">USD</span></span>
+<span class="font-label-sm text-label-sm text-outline">Venta realizada</span>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-label-sm font-medium bg-[#ECEAE7] text-[#6B574F]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#6B574F]"></span>
+                Vendida
+              </span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-label-sm font-label-sm text-outline bg-surface-container">
+                Exclusiva (Cerrada)
+              </span>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col items-center justify-center gap-1 text-center" title="Inmuebles vendidos se bloquean automáticamente">
+<span class="material-symbols-outlined text-outline text-[18px]">lock</span>
+<span class="font-label-sm text-label-sm text-outline">Bloqueado</span>
+</div>
+</td>
+<td class="py-4 pr-6 pl-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="px-2.5 py-1 rounded-md text-secondary font-label-sm text-label-sm hover:text-primary hover:bg-surface-container transition-colors" type="button">
+                  Ficha histórica
+                </button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-primary transition-colors" title="Ocultar de la web (Visible por 30 días tras venta)" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility_off</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="px-6 py-4 bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-4">
+<span class="font-body-sm text-body-sm text-secondary">
+        Mostrando <strong class="text-primary font-semibold">1 a 6</strong> de <strong class="text-primary font-semibold">25</strong> propiedades registradas
+      </span>
+<div class="flex items-center gap-1.5">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-outline cursor-not-allowed font-label-sm text-label-sm flex items-center gap-1" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+<span>Anterior</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-semibold flex items-center justify-center shadow-sm" type="button">
+          1
+        </button>
+<button class="w-8 h-8 rounded-lg text-secondary hover:bg-surface-container hover:text-primary font-label-sm text-label-sm flex items-center justify-center transition-colors" type="button">
+          2
+        </button>
+<button class="w-8 h-8 rounded-lg text-secondary hover:bg-surface-container hover:text-primary font-label-sm text-label-sm flex items-center justify-center transition-colors" type="button">
+          3
+        </button>
+<button class="w-8 h-8 rounded-lg text-secondary hover:bg-surface-container hover:text-primary font-label-sm text-label-sm flex items-center justify-center transition-colors" type="button">
+          4
+        </button>
+<button class="w-8 h-8 rounded-lg text-secondary hover:bg-surface-container hover:text-primary font-label-sm text-label-sm flex items-center justify-center transition-colors" type="button">
+          5
+        </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-primary hover:bg-surface-variant font-label-sm text-label-sm flex items-center gap-1 transition-colors" type="button">
+<span>Siguiente</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Business Policy Banner -->
+<div class="mt-6 p-4 rounded-xl bg-surface-container-low flex items-start sm:items-center gap-3.5 text-secondary">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[19px]">verified_user</span>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 flex-1">
+<p class="font-body-sm text-body-sm leading-relaxed text-on-surface">
+<strong class="font-semibold text-primary">Regla institucional RG:</strong> Las propiedades marcadas como <em>Vendidas</em> o <em>Alquiladas</em> se retiran automáticamente del carrusel del inicio y se archivan de la vitrina pública transcurridos 30 días de la firma.
+      </p>
+<a class="font-label-sm text-label-sm font-semibold text-primary shrink-0 hover:underline" href="#">
+        Ver políticas
+      </a>
+</div>
+</div>
+</div></main></div></body></html>
